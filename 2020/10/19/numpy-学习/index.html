@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>numpy 学习“ | Hexo</title>
+
+  
+  <meta name="author" content="John Doe">
+  
+
+  
+  <meta name="description" content="类型
+解释
+
+
+
+bool
+布尔类型，1 个字节，值为 True 或 False。
+
+
+int
+整数类型，通常为 int64 或 int32 。
+
+
+intc
+与 C 里的 int 相同，通常为 int32 或 int64。
+
+
+intp
+用于索引，通常为 int32 或 int64。
+
+
+int8">
+  
+
+  
+  
+  <meta name="keywords" content="numpy 学习">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="numpy 学习“"/>
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>numpy 学习“</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/10/19/numpy-学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-10-19T11:52:53.000Z">
+          2020-10-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">布尔类型，1 个字节，值为 True 或 False。</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">整数类型，通常为 int64 或 int32 。</td>
+</tr>
+<tr>
+<td align="center">intc</td>
+<td align="center">与 C 里的 int 相同，通常为 int32 或 int64。</td>
+</tr>
+<tr>
+<td align="center">intp</td>
+<td align="center">用于索引，通常为 int32 或 int64。</td>
+</tr>
+<tr>
+<td align="center">int8</td>
+<td align="center">字节（从 -128 到 127）</td>
+</tr>
+<tr>
+<td align="center">int16</td>
+<td align="center">整数（从 -32768 到 32767）</td>
+</tr>
+<tr>
+<td align="center">int32</td>
+<td align="center">整数（从 -2147483648 到 2147483647）</td>
+</tr>
+<tr>
+<td align="center">int64</td>
+<td align="center">整数（从 -9223372036854775808 到 9223372036854775807）</td>
+</tr>
+<tr>
+<td align="center">uint8</td>
+<td align="center">无符号整数（从 0 到 255）</td>
+</tr>
+<tr>
+<td align="center">uint16</td>
+<td align="center">无符号整数（从 0 到 65535）</td>
+</tr>
+<tr>
+<td align="center">uint32</td>
+<td align="center">无符号整数（从 0 到 4294967295）</td>
+</tr>
+<tr>
+<td align="center">uint64</td>
+<td align="center">无符号整数（从 0 到 18446744073709551615）</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">float64 的简写。</td>
+</tr>
+<tr>
+<td align="center">float16</td>
+<td align="center">半精度浮点，5 位指数，10 位尾数</td>
+</tr>
+<tr>
+<td align="center">float32</td>
+<td align="center">单精度浮点，8 位指数，23 位尾数</td>
+</tr>
+<tr>
+<td align="center">float64</td>
+<td align="center">双精度浮点，11 位指数，52 位尾数</td>
+</tr>
+<tr>
+<td align="center">complex</td>
+<td align="center">complex128 的简写。</td>
+</tr>
+<tr>
+<td align="center">complex64</td>
+<td align="center">复数，由两个 32 位浮点表示。</td>
+</tr>
+<tr>
+<td align="center">complex128</td>
+<td align="center">复数，由两个 64 位浮点表示。</td>
+</tr>
+</tbody></table>
+<p>在Numpy中， 上面提到的这些数值类型都被归于 <code>dtype (data-type)</code> 对象的实例。 我们可以用 numpy.dtype(object, align, copy) 来指定数值类型。 而在数组里面， 可以用 <code>dtype=</code> 参数</p>
+<p>NumPy 中，<code>ndarray</code> 类具有六个参数，它们分别为：</p>
+<ul>
+<li><code>shape</code>：数组的形状。</li>
+<li><code>dtype</code>：数据类型。</li>
+<li><code>buffer</code>：对象暴露缓冲区接口。</li>
+<li><code>offset</code>：数组数据的偏移量。</li>
+<li><code>strides</code>：数据步长。</li>
+<li><code>order</code>：<code>&#123;&#39;C&#39;，&#39;F&#39;&#125;</code>，以行或列为主排列顺序。</li>
+</ul>
+<p>下面，我们来了解创建 NumPy 多维数组的一些方法。在 NumPy 中，我们主要通过以下 5 种途径创建数组，它们分别是:</p>
+<ul>
+<li>从 Python 数组结构列表，元组等转换。</li>
+<li>使用 <code>np.arange</code>、<code>np.ones</code>、<code>np.zeros</code> 等 NumPy 原生方法。</li>
+<li>从存储空间读取数组。</li>
+<li>通过使用字符串或缓冲区从原始字节创建数组。</li>
+<li>使用特殊函数，如 <code>random</code>。</li>
+</ul>
+<p>除了直接使用 array 方法创建 <code>ndarray</code>，在 NumPy 中还有一些方法可以创建一些有规律性的多维数。首先，我们来看一看 <code>arange()</code>。<code>arange()</code> 的功能是在给定区间内创建一系列均匀间隔的值。方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.arange(start, stop, step, dtype=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+
+<p>你需要先设置值所在的区间 <code>[开始， 停止)</code>，这是一个半开半闭区间。然后，在设置 <code>step</code> 步长用于设置值之间的间隔。最后的可选参数 <code>dtype </code>可以设置返回<code>ndarray</code> 的值类型。</p>
+<h4 id="ndarray-数组属性"><a href="#ndarray-数组属性" class="headerlink" title="ndarray 数组属性"></a><code>ndarray</code> 数组属性</h4><img width="500px" src="https://doc.shiyanlou.com/courses/uid214893-20190528-1559029416949">
+
+<p>你可以发现规律，<code>.shape</code> 得到的形状实际上是数组在每个轴 Axis 上面的元素数量，而 <code>.shape</code> 的长度的表明了数组的维度。</p>
+<h4 id="数组展开"><a href="#数组展开" class="headerlink" title="数组展开"></a>数组展开</h4><p>数组扁平化，变为 1 维数组。<code>ravel</code> 方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.ravel(a, order=<span class="string">&#x27;C&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，a 表示需要处理的数组。<code>order</code> 表示变换时的读取顺序，默认是按照行依次读取，当 <code>order=&#39;F&#39;</code> 时，可以按列依次读取排序。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/numpy-学习/">numpy 学习</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 John Doe
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

@@ -55,6 +55,660 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/11/11/Genome Aseembly/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/11/11/Genome Aseembly/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-11-10T19:23:43.325Z">
+          2020-11-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="Genome-Aseembly"><a href="#Genome-Aseembly" class="headerlink" title="Genome Aseembly"></a>Genome Aseembly</h4><h5 id="1-Download-data"><a href="#1-Download-data" class="headerlink" title="1.Download_data"></a>1.Download_data</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR209/001/SRR2093871/SRR2093871_1.fastq.gz</span><br><span class="line">wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR209/001/SRR2093871/SRR2093871_2.fastq.gz</span><br><span class="line">wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR209/002/SRR2093872/SRR2093872_1.fastq.gz</span><br><span class="line">wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR209/002/SRR2093872/SRR2093872_2.fastq.gz</span><br><span class="line">wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR209/006/SRR2093876/SRR2093876_subreads.fastq.gz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-Assembly"><a href="#2-Assembly" class="headerlink" title="2.Assembly"></a>2.Assembly</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">canu -p Bt2 -d Bt2_assembly genomeSize=6.2m  -pacbio-raw SRR2093876_subreads.fastq.gz </span><br></pre></td></tr></table></figure>
+
+<h5 id="3-GenomeScope"><a href="#3-GenomeScope" class="headerlink" title="3. GenomeScope"></a>3. GenomeScope</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jellyfish count -C -m 21 -s 1000000000 -t 10 *.fastq -o reads.jf</span><br><span class="line"></span><br><span class="line">jellyfish histo -t 10 reads.jf &gt; reads.histo</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-Checking-your-Assembly-for-contaminants-using-VecScreen"><a href="#4-Checking-your-Assembly-for-contaminants-using-VecScreen" class="headerlink" title="4. Checking your Assembly for contaminants using VecScreen"></a>4. Checking your Assembly for contaminants using VecScreen</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/814/215/GCF_002814215.1_Sedor1/GCF_002814215.1_Sedor1_genomic.fna.gz</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-Genome-Scaffolding-with-pyScaf"><a href="#5-Genome-Scaffolding-with-pyScaf" class="headerlink" title="5. Genome Scaffolding with pyScaf"></a>5. Genome Scaffolding with pyScaf</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;lpryszcz&#x2F;pyScaf.git</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/11/06/Genome-Scope-study/"><span>Genome Scope study</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/11/06/Genome-Scope-study/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-11-06T06:50:17.000Z">
+          2020-11-06
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/11/03/重测序学习/重测序学习/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/11/03/重测序学习/重测序学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-11-03T10:48:20.724Z">
+          2020-11-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ol>
+<li>SNP calling</li>
+</ol>
+<p><img src="/2020/11/03/%E9%87%8D%E6%B5%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/%E9%87%8D%E6%B5%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/Users\Jinke\AppData\Roaming\Typora\typora-user-images\image-20201103184910938.png" alt="image-20201103184910938"></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/10/21/h5文件简介/"><span>h5文件简介</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/10/21/h5文件简介/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-10-21T08:08:35.000Z">
+          2020-10-21
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p> h5文件是层次格式的</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/h5文件/">h5文件</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/10/19/matplotlib-学习/"><span>matplotlib 学习“</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/10/19/matplotlib-学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-10-19T13:16:06.000Z">
+          2020-10-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p> 使用 Matplotlib 提供的面向对象 API，需要导入 <code>pyplot</code> 模块，并约定简称为 <code>plt</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+
+<p><code>pyplot</code> 模块中 <code>pyplot.plot</code> 方法是用来绘制折线图的。你应该会很容易联想到，更改后面的方法类名就可以更改图形的样式。的确，在 Matplotlib 中，大部分图形样式的绘制方法都存在于 <code>pyplot</code> 模块中。例如：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>matplotlib.pyplot.angle_spectrum</code></td>
+<td>绘制电子波谱图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.bar</code></td>
+<td>绘制柱状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.barh</code></td>
+<td>绘制直方图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.broken_barh</code></td>
+<td>绘制水平直方图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.contour</code></td>
+<td>绘制等高线图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.errorbar</code></td>
+<td>绘制误差线</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hexbin</code></td>
+<td>绘制六边形图案</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hist</code></td>
+<td>绘制柱形图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hist2d</code></td>
+<td>绘制水平柱状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.pie</code></td>
+<td>绘制饼状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.quiver</code></td>
+<td>绘制量场图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.scatter</code></td>
+<td>散点图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.specgram</code></td>
+<td>绘制光谱图</td>
+</tr>
+</tbody></table>
+<p><code>matplotlib.pyplot.plot(*args, **kwargs)</code> 方法严格来讲可以绘制线形图或者样本标记。其中，<code>*args</code> 允许输入单个 <em>𝑦</em> 值或 <em>𝑥</em>,<em>𝑦</em> 值</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/matplotlib-指引/">matplotlib 指引</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/10/19/matplotlib-学习“/"><span>matplotlib 学习“</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/10/19/matplotlib-学习“/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-10-19T13:16:06.000Z">
+          2020-10-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p> 使用 Matplotlib 提供的面向对象 API，需要导入 <code>pyplot</code> 模块，并约定简称为 <code>plt</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+
+<p><code>pyplot</code> 模块中 <code>pyplot.plot</code> 方法是用来绘制折线图的。你应该会很容易联想到，更改后面的方法类名就可以更改图形的样式。的确，在 Matplotlib 中，大部分图形样式的绘制方法都存在于 <code>pyplot</code> 模块中。例如：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>matplotlib.pyplot.angle_spectrum</code></td>
+<td>绘制电子波谱图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.bar</code></td>
+<td>绘制柱状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.barh</code></td>
+<td>绘制直方图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.broken_barh</code></td>
+<td>绘制水平直方图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.contour</code></td>
+<td>绘制等高线图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.errorbar</code></td>
+<td>绘制误差线</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hexbin</code></td>
+<td>绘制六边形图案</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hist</code></td>
+<td>绘制柱形图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hist2d</code></td>
+<td>绘制水平柱状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.pie</code></td>
+<td>绘制饼状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.quiver</code></td>
+<td>绘制量场图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.scatter</code></td>
+<td>散点图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.specgram</code></td>
+<td>绘制光谱图</td>
+</tr>
+</tbody></table>
+<p><code>matplotlib.pyplot.plot(*args, **kwargs)</code> 方法严格来讲可以绘制线形图或者样本标记。其中，<code>*args</code> 允许输入单个 <em>𝑦</em> 值或 <em>𝑥</em>,<em>𝑦</em> 值</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/matplotlib-指引/">matplotlib 指引</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/10/19/numpy-学习/"><span>numpy 学习“</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/10/19/numpy-学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-10-19T11:52:53.000Z">
+          2020-10-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">布尔类型，1 个字节，值为 True 或 False。</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">整数类型，通常为 int64 或 int32 。</td>
+</tr>
+<tr>
+<td align="center">intc</td>
+<td align="center">与 C 里的 int 相同，通常为 int32 或 int64。</td>
+</tr>
+<tr>
+<td align="center">intp</td>
+<td align="center">用于索引，通常为 int32 或 int64。</td>
+</tr>
+<tr>
+<td align="center">int8</td>
+<td align="center">字节（从 -128 到 127）</td>
+</tr>
+<tr>
+<td align="center">int16</td>
+<td align="center">整数（从 -32768 到 32767）</td>
+</tr>
+<tr>
+<td align="center">int32</td>
+<td align="center">整数（从 -2147483648 到 2147483647）</td>
+</tr>
+<tr>
+<td align="center">int64</td>
+<td align="center">整数（从 -9223372036854775808 到 9223372036854775807）</td>
+</tr>
+<tr>
+<td align="center">uint8</td>
+<td align="center">无符号整数（从 0 到 255）</td>
+</tr>
+<tr>
+<td align="center">uint16</td>
+<td align="center">无符号整数（从 0 到 65535）</td>
+</tr>
+<tr>
+<td align="center">uint32</td>
+<td align="center">无符号整数（从 0 到 4294967295）</td>
+</tr>
+<tr>
+<td align="center">uint64</td>
+<td align="center">无符号整数（从 0 到 18446744073709551615）</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">float64 的简写。</td>
+</tr>
+<tr>
+<td align="center">float16</td>
+<td align="center">半精度浮点，5 位指数，10 位尾数</td>
+</tr>
+<tr>
+<td align="center">float32</td>
+<td align="center">单精度浮点，8 位指数，23 位尾数</td>
+</tr>
+<tr>
+<td align="center">float64</td>
+<td align="center">双精度浮点，11 位指数，52 位尾数</td>
+</tr>
+<tr>
+<td align="center">complex</td>
+<td align="center">complex128 的简写。</td>
+</tr>
+<tr>
+<td align="center">complex64</td>
+<td align="center">复数，由两个 32 位浮点表示。</td>
+</tr>
+<tr>
+<td align="center">complex128</td>
+<td align="center">复数，由两个 64 位浮点表示。</td>
+</tr>
+</tbody></table>
+<p>在Numpy中， 上面提到的这些数值类型都被归于 <code>dtype (data-type)</code> 对象的实例。 我们可以用 numpy.dtype(object, align, copy) 来指定数值类型。 而在数组里面， 可以用 <code>dtype=</code> 参数</p>
+<p>NumPy 中，<code>ndarray</code> 类具有六个参数，它们分别为：</p>
+<ul>
+<li><code>shape</code>：数组的形状。</li>
+<li><code>dtype</code>：数据类型。</li>
+<li><code>buffer</code>：对象暴露缓冲区接口。</li>
+<li><code>offset</code>：数组数据的偏移量。</li>
+<li><code>strides</code>：数据步长。</li>
+<li><code>order</code>：<code>&#123;&#39;C&#39;，&#39;F&#39;&#125;</code>，以行或列为主排列顺序。</li>
+</ul>
+<p>下面，我们来了解创建 NumPy 多维数组的一些方法。在 NumPy 中，我们主要通过以下 5 种途径创建数组，它们分别是:</p>
+<ul>
+<li>从 Python 数组结构列表，元组等转换。</li>
+<li>使用 <code>np.arange</code>、<code>np.ones</code>、<code>np.zeros</code> 等 NumPy 原生方法。</li>
+<li>从存储空间读取数组。</li>
+<li>通过使用字符串或缓冲区从原始字节创建数组。</li>
+<li>使用特殊函数，如 <code>random</code>。</li>
+</ul>
+<p>除了直接使用 array 方法创建 <code>ndarray</code>，在 NumPy 中还有一些方法可以创建一些有规律性的多维数。首先，我们来看一看 <code>arange()</code>。<code>arange()</code> 的功能是在给定区间内创建一系列均匀间隔的值。方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.arange(start, stop, step, dtype=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+
+<p>你需要先设置值所在的区间 <code>[开始， 停止)</code>，这是一个半开半闭区间。然后，在设置 <code>step</code> 步长用于设置值之间的间隔。最后的可选参数 <code>dtype </code>可以设置返回<code>ndarray</code> 的值类型。</p>
+<h4 id="ndarray-数组属性"><a href="#ndarray-数组属性" class="headerlink" title="ndarray 数组属性"></a><code>ndarray</code> 数组属性</h4><img width="500px" src="https://doc.shiyanlou.com/courses/uid214893-20190528-1559029416949">
+
+<p>你可以发现规律，<code>.shape</code> 得到的形状实际上是数组在每个轴 Axis 上面的元素数量，而 <code>.shape</code> 的长度的表明了数组的维度。</p>
+<h4 id="数组展开"><a href="#数组展开" class="headerlink" title="数组展开"></a>数组展开</h4><p>数组扁平化，变为 1 维数组。<code>ravel</code> 方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.ravel(a, order=<span class="string">&#x27;C&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，a 表示需要处理的数组。<code>order</code> 表示变换时的读取顺序，默认是按照行依次读取，当 <code>order=&#39;F&#39;</code> 时，可以按列依次读取排序。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/numpy-学习/">numpy 学习</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/10/19/Jupyter-notebook-使用手册/"><span>Jupyter-notebook 使用手册</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/10/19/Jupyter-notebook-使用手册/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-10-19T11:47:35.000Z">
+          2020-10-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p> 重启内核，全部的单元格运行状态都会重置。</p>
+<p><img src="/2020/10/19/Jupyter-notebook-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/Users\Jinke\AppData\Roaming\Typora\typora-user-images\image-20201019195004243.png" alt="image-20201019195004243"></p>
+<p><strong>Jupyter notebook shortcuts:</strong> <a target="_blank" rel="noopener" href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/">https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Jupyter-notebook-指引/">Jupyter notebook 指引</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/10/16/2020全国植物学大会/"><span>2020全国植物学大会</span></a></h3>
     
   
@@ -153,441 +807,6 @@
       <i class="icon-tags"></i>
         <a href="/tags/python-pdb/">python pdb</a>
     </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/10/07/Transition-and-Transversion/"><span>Transition and Transversion</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/10/07/Transition-and-Transversion/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-10-07T14:26:59.000Z">
-          2020-10-07
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A transition substitutes one purine for another (A↔G) or one pyrimidine for another (C↔T);</span></span><br><span class="line"><span class="comment"># a transversion is the interchange of a purine for a pyrimidine base, or vice-versa</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 思路计算转换和颠换次数</span></span><br><span class="line"><span class="comment"># 难点在于排除碱基相等的情况</span></span><br><span class="line"></span><br><span class="line">seq_list = []</span><br><span class="line">stseq = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">&#x27;rosalind_tran.txt&#x27;</span>):</span><br><span class="line">    <span class="keyword">if</span> line[<span class="number">0</span>] == <span class="string">&#x27;&gt;&#x27;</span>:</span><br><span class="line">        <span class="keyword">if</span> stseq != <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            <span class="comment"># 把 stseq 添加到 seq_list里</span></span><br><span class="line">            seq_list.append(stseq)</span><br><span class="line">            stseq = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 生成stseq</span></span><br><span class="line">        stseq = stseq + line.strip(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 这一段的代码的核心是在这最后一行</span></span><br><span class="line">seq_list.append(stseq)</span><br><span class="line"></span><br><span class="line">seq_1 = seq_list[<span class="number">0</span>]</span><br><span class="line">seq_2 = seq_list[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">total = len(seq_1)</span><br><span class="line"></span><br><span class="line">transition = <span class="number">0</span></span><br><span class="line">transvertion = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(total):</span><br><span class="line">    print(seq_1[i], seq_2[i] )</span><br><span class="line">    <span class="keyword">if</span> seq_1[i] <span class="keyword">in</span> <span class="string">&quot;AG&quot;</span> <span class="keyword">and</span> seq_2[i] <span class="keyword">in</span> <span class="string">&quot;AG&quot;</span> <span class="keyword">and</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transition = transition + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> seq_1[i] <span class="keyword">in</span> <span class="string">&quot;CT&quot;</span> <span class="keyword">and</span> seq_2[i] <span class="keyword">in</span> <span class="string">&quot;CT&quot;</span> <span class="keyword">and</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transition = transition + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transvertion = transvertion + <span class="number">1</span></span><br><span class="line">print(transition/transvertion, total)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Rosalind-点突变-转换和颠换/">Rosalind 点突变 转换和颠换</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/09/28/关于工程管理的心得体会/"><span>关于工程管理的心得体会</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/28/关于工程管理的心得体会/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-28T13:03:03.000Z">
-          2020-09-28
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="工程管理的的体会"><a href="#工程管理的的体会" class="headerlink" title="工程管理的的体会"></a><strong>工程管理的的体会</strong></h3><p>自己也算是快完成了自己的课题，在此记录自己的工程管理方面的得与失。</p>
-<p>我的工程就是我的课题，</p>
-<p>文件主要包括三类文件： 日志， 下载的数据， 还有脚本。</p>
-<p>我认为我在整个课题主线进行过程中日志跟进的很不错，具体表现在分类清晰，可以复现自己的分析。<br>这方面我是参照：<br><a target="_blank" rel="noopener" href="https://bioinformaticsworkbook.org/projectManagement/projectManagement_index#gsc.tab=0%EF%BC%8C">https://bioinformaticsworkbook.org/projectManagement/projectManagement_index#gsc.tab=0，</a><br>整理的日志。</p>
-<p>但是最让我头痛的是一些自己的个性化的零零碎碎的分析。总是串不到一起，而且组织很凌乱。<br>刚才我突然想到一个解决办法，可以按照主线组织零碎文件。比如我的课题主要是三大方面，在三个主要日志的基础上，完全可以另建一个日志，但是不要建立太多的日志，<br>否则不久就会凌乱，还有重要是每天都要熟悉自己的日志文件，这方面自己做的不好。还有像R和python直接就在主目录建立工程，之后目录也容易管理。</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/工程管理/">工程管理</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/09/24/Git-command/"><span>Git command</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/24/Git-command/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-24T14:21:12.000Z">
-          2020-09-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="推送已有目录到Git远程仓库"><a href="#推送已有目录到Git远程仓库" class="headerlink" title="推送已有目录到Git远程仓库"></a>推送已有目录到Git远程仓库</h3><h5 id="1-初始化仓库"><a href="#1-初始化仓库" class="headerlink" title="1.初始化仓库"></a>1.初始化仓库</h5><p>git init</p>
-<h5 id="2-和远程仓库建立链接"><a href="#2-和远程仓库建立链接" class="headerlink" title="2. 和远程仓库建立链接"></a>2. 和远程仓库建立链接</h5><p>两种方式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:Username/Projectname.git</span><br><span class="line">或者是 </span><br><span class="line">git remote add origin 项目的网络地址</span><br></pre></td></tr></table></figure>
-
-<h5 id="3-推送文件到远程目录"><a href="#3-推送文件到远程目录" class="headerlink" title="3. 推送文件到远程目录"></a>3. 推送文件到远程目录</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master -f</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Git/">Git</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/09/24/手动设置win10开机启动程序/"><span>手动设置win10开机启动程序</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/24/手动设置win10开机启动程序/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-24T02:19:54.000Z">
-          2020-09-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p> 手动设置开机启动项<img src="/2020/09/24/%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AEwin10%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/Snipaste_2020-09-24_10-21-45.png"></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/win10-tools/">win10 tools</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/09/21/theanine-metabolism-pathway-evolution/"><span>theanine metabolism pathway evolution</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/21/theanine-metabolism-pathway-evolution/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-21T09:17:09.000Z">
-          2020-09-21
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>  最近一直在研究一类文章 网络进化和 代谢途径的关系，今天终于看出来它的一点思路，记录待察。</p>
-<p><img src="/2020/09/21/theanine-metabolism-pathway-evolution/Snipaste_2020-09-21_17-17-34.png"></p>
-<p>这篇文章的亮点是研究 蝴蝶和植物（大白菜）之间的斗争。大白菜不想让蝴蝶的幼虫吃，蝴蝶的幼虫还得吃，两者互相比赛，你打我，我打你。</p>
-<p>我最想知道怎么研究这个路径的，后来是通过比较代谢途径，找到核心途径，之后结合基因复制事件保留的基因做的。</p>
-<p>这一点不知道茶树可不可以做得到，否则真是一篇好文章。</p>
-<p><img src="/2020/09/21/theanine-metabolism-pathway-evolution/Snipaste_2020-09-21_17-23-15.png"></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/tea-theanine-pathway-evolution/">tea theanine pathway evolution</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/09/15/feeling-of-writring-article/"><span>feeling of writring article</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/15/feeling-of-writring-article/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-15T13:24:05.000Z">
-          2020-09-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Article-feeling/">Article feeling</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/09/15/bzip-identification/"><span>bzip identification</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/15/bzip-identification/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-15T13:17:19.000Z">
-          2020-09-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>   bzip identification</p>
-<p>目的：帮我一个师妹鉴定茶树的bzip转录因子，提取蛋白序列做进化树</p>
-<p>困难：发现bzip比一般的转录因子都要复杂，很少有做这方面的全基因组家族鉴定的文章。少有的玉米，竹子。</p>
-<p>并且还是全长序列做的，甚至给bzip分类还能分到 Trends in Plant Science.</p>
-<p>硕士论文也是全长做的，所以我建议可以把结果给她，让她找一找茶树不是的，之后直接利用全长序列建树。</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/bzip-identification/">bzip identification</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/09/15/bzip转录因子/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/15/bzip转录因子/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-15T13:13:15.893Z">
-          2020-09-15
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
     
 
     </div>
