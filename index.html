@@ -372,123 +372,6 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/10/19/matplotlib-学习“/"><span>matplotlib 学习“</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/10/19/matplotlib-学习“/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-10-19T13:16:06.000Z">
-          2020-10-19
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p> 使用 Matplotlib 提供的面向对象 API，需要导入 <code>pyplot</code> 模块，并约定简称为 <code>plt</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
-
-<p><code>pyplot</code> 模块中 <code>pyplot.plot</code> 方法是用来绘制折线图的。你应该会很容易联想到，更改后面的方法类名就可以更改图形的样式。的确，在 Matplotlib 中，大部分图形样式的绘制方法都存在于 <code>pyplot</code> 模块中。例如：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>matplotlib.pyplot.angle_spectrum</code></td>
-<td>绘制电子波谱图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.bar</code></td>
-<td>绘制柱状图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.barh</code></td>
-<td>绘制直方图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.broken_barh</code></td>
-<td>绘制水平直方图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.contour</code></td>
-<td>绘制等高线图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.errorbar</code></td>
-<td>绘制误差线</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.hexbin</code></td>
-<td>绘制六边形图案</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.hist</code></td>
-<td>绘制柱形图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.hist2d</code></td>
-<td>绘制水平柱状图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.pie</code></td>
-<td>绘制饼状图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.quiver</code></td>
-<td>绘制量场图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.scatter</code></td>
-<td>散点图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.specgram</code></td>
-<td>绘制光谱图</td>
-</tr>
-</tbody></table>
-<p><code>matplotlib.pyplot.plot(*args, **kwargs)</code> 方法严格来讲可以绘制线形图或者样本标记。其中，<code>*args</code> 允许输入单个 <em>𝑦</em> 值或 <em>𝑥</em>,<em>𝑦</em> 值</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/matplotlib-指引/">matplotlib 指引</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
     <h3 class="article-title"><a href="/2020/10/19/numpy-学习/"><span>numpy 学习“</span></a></h3>
     
   
@@ -806,6 +689,60 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/python-pdb/">python pdb</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/10/07/Transition-and-Transversion/"><span>Transition and Transversion</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/10/07/Transition-and-Transversion/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-10-07T14:26:59.000Z">
+          2020-10-07
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A transition substitutes one purine for another (A↔G) or one pyrimidine for another (C↔T);</span></span><br><span class="line"><span class="comment"># a transversion is the interchange of a purine for a pyrimidine base, or vice-versa</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 思路计算转换和颠换次数</span></span><br><span class="line"><span class="comment"># 难点在于排除碱基相等的情况</span></span><br><span class="line"></span><br><span class="line">seq_list = []</span><br><span class="line">stseq = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">&#x27;rosalind_tran.txt&#x27;</span>):</span><br><span class="line">    <span class="keyword">if</span> line[<span class="number">0</span>] == <span class="string">&#x27;&gt;&#x27;</span>:</span><br><span class="line">        <span class="keyword">if</span> stseq != <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            <span class="comment"># 把 stseq 添加到 seq_list里</span></span><br><span class="line">            seq_list.append(stseq)</span><br><span class="line">            stseq = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 生成stseq</span></span><br><span class="line">        stseq = stseq + line.strip(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 这一段的代码的核心是在这最后一行</span></span><br><span class="line">seq_list.append(stseq)</span><br><span class="line"></span><br><span class="line">seq_1 = seq_list[<span class="number">0</span>]</span><br><span class="line">seq_2 = seq_list[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">total = len(seq_1)</span><br><span class="line"></span><br><span class="line">transition = <span class="number">0</span></span><br><span class="line">transvertion = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(total):</span><br><span class="line">    print(seq_1[i], seq_2[i] )</span><br><span class="line">    <span class="keyword">if</span> seq_1[i] <span class="keyword">in</span> <span class="string">&quot;AG&quot;</span> <span class="keyword">and</span> seq_2[i] <span class="keyword">in</span> <span class="string">&quot;AG&quot;</span> <span class="keyword">and</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transition = transition + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> seq_1[i] <span class="keyword">in</span> <span class="string">&quot;CT&quot;</span> <span class="keyword">and</span> seq_2[i] <span class="keyword">in</span> <span class="string">&quot;CT&quot;</span> <span class="keyword">and</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transition = transition + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transvertion = transvertion + <span class="number">1</span></span><br><span class="line">print(transition/transvertion, total)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Rosalind-点突变-转换和颠换/">Rosalind 点突变 转换和颠换</a>
     </span>
     
 
