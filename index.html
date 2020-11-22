@@ -55,6 +55,70 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/11/21/关于基因水平转移的思考/"><span>关于基因水平转移的思考</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/11/21/关于基因水平转移的思考/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-11-21T13:15:38.000Z">
+          2020-11-21
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p> 最近准备看水平转移的一些文献。正好最近在开一个会议，涉及到两方面的课题。</p>
+<ol>
+<li>茶氨酸合成酶的基因的出生</li>
+</ol>
+<ol start="2">
+<li><h5 id="茶氨酸合成基因的水平转移来源"><a href="#茶氨酸合成基因的水平转移来源" class="headerlink" title="茶氨酸合成基因的水平转移来源"></a>茶氨酸合成基因的水平转移来源</h5><p> 两个方法：</p>
+<ol>
+<li>BLAST</li>
+<li>系统进化树分析</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/基因-水平转移/">基因 水平转移</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/11/11/Genome Aseembly/"><span></span></a></h3>
     
   
@@ -128,7 +192,9 @@
   <div class="article-content">
     <div class="entry">
       
-        
+        <p><img src="https://isugenomics.github.io/bioinformatics-workbook/assets/images/genomescope/screen_shot_2017-02-16_at_7.31.20_am.png" alt="GenomeScope"></p>
+<p><img src="/2020/11/06/Genome-Scope-study/Users\Jinke\AppData\Roaming\Typora\typora-user-images\image-20201122214923389.png" alt="image-20201122214923389"></p>
+
       
     </div>
 
@@ -255,7 +321,7 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/10/19/matplotlib-学习/"><span>matplotlib 学习“</span></a></h3>
+    <h3 class="article-title"><a href="/2020/10/19/matplotlib-学习/"><span>matplotlib 学习</span></a></h3>
     
   
 
@@ -372,7 +438,7 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/10/19/numpy-学习/"><span>numpy 学习“</span></a></h3>
+    <h3 class="article-title"><a href="/2020/10/19/numpy-学习/"><span>numpy 学习</span></a></h3>
     
   
 
@@ -689,60 +755,6 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/python-pdb/">python pdb</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/10/07/Transition-and-Transversion/"><span>Transition and Transversion</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/10/07/Transition-and-Transversion/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-10-07T14:26:59.000Z">
-          2020-10-07
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A transition substitutes one purine for another (A↔G) or one pyrimidine for another (C↔T);</span></span><br><span class="line"><span class="comment"># a transversion is the interchange of a purine for a pyrimidine base, or vice-versa</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 思路计算转换和颠换次数</span></span><br><span class="line"><span class="comment"># 难点在于排除碱基相等的情况</span></span><br><span class="line"></span><br><span class="line">seq_list = []</span><br><span class="line">stseq = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">&#x27;rosalind_tran.txt&#x27;</span>):</span><br><span class="line">    <span class="keyword">if</span> line[<span class="number">0</span>] == <span class="string">&#x27;&gt;&#x27;</span>:</span><br><span class="line">        <span class="keyword">if</span> stseq != <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            <span class="comment"># 把 stseq 添加到 seq_list里</span></span><br><span class="line">            seq_list.append(stseq)</span><br><span class="line">            stseq = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 生成stseq</span></span><br><span class="line">        stseq = stseq + line.strip(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 这一段的代码的核心是在这最后一行</span></span><br><span class="line">seq_list.append(stseq)</span><br><span class="line"></span><br><span class="line">seq_1 = seq_list[<span class="number">0</span>]</span><br><span class="line">seq_2 = seq_list[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">total = len(seq_1)</span><br><span class="line"></span><br><span class="line">transition = <span class="number">0</span></span><br><span class="line">transvertion = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(total):</span><br><span class="line">    print(seq_1[i], seq_2[i] )</span><br><span class="line">    <span class="keyword">if</span> seq_1[i] <span class="keyword">in</span> <span class="string">&quot;AG&quot;</span> <span class="keyword">and</span> seq_2[i] <span class="keyword">in</span> <span class="string">&quot;AG&quot;</span> <span class="keyword">and</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transition = transition + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> seq_1[i] <span class="keyword">in</span> <span class="string">&quot;CT&quot;</span> <span class="keyword">and</span> seq_2[i] <span class="keyword">in</span> <span class="string">&quot;CT&quot;</span> <span class="keyword">and</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transition = transition + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> seq_1[i] != seq_2[i]:</span><br><span class="line">        transvertion = transvertion + <span class="number">1</span></span><br><span class="line">print(transition/transvertion, total)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Rosalind-点突变-转换和颠换/">Rosalind 点突变 转换和颠换</a>
     </span>
     
 
