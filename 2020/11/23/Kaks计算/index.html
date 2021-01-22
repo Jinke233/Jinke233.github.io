@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Kaks计算 | Hexo</title>
+
+  
+  <meta name="author" content="John Doe">
+  
+
+  
+  <meta name="description" content="对于一个没有受到自然选择压力的基因来说，Ka/Ks 一般会小于等于1。但实际情况下，这个比值都是远小于1的，因为从蛋白质进化的角度而言，为了维持蛋白质功能的稳定性，其非同义替换的数量往往较少，因此非同义突变Ka要远远小于Ks。因此我们根据Ka/Ks大小，将基因划分为三类：
+  Ka&amp;gt;&amp;gt;&amp;">
+  
+
+  
+  
+  <meta name="keywords" content="Ka Ks计算">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Kaks计算"/>
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Kaks计算</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/11/23/Kaks计算/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-11-23T06:47:46.000Z">
+          2020-11-23
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>  对于一个没有受到自然选择压力的基因来说，Ka/Ks 一般会小于等于1。但实际情况下，这个比值都是远小于1的，因为从蛋白质进化的角度而言，为了维持蛋白质功能的稳定性，其非同义替换的数量往往较少，因此非同义突变Ka要远远小于Ks。因此我们根据Ka/Ks大小，将基因划分为三类：</p>
+<p>  Ka&gt;&gt;&gt;Ks -&gt; Ka/Ks &gt;&gt; 1, 基因受正选择 （positive selection）</p>
+<p>  Ka = Ks -&gt; Ka/Ks = 1, 基因中性进化 （neutural selection）</p>
+<p>  Ka&lt;&lt;&lt;Ks -&gt; Ka/Ks &lt;&lt; 1, 基因受纯化选择 （negative selection）</p>
+<p>  对于一个基因是否受到正选择，我们不能简单的数一下两条序列之间发生（非）同义变换的SNP位点数，再除以（非）同义替换位点数，<strong>就得到Ka/Ks值！</strong>因为不同碱基之间发生替换的速率不同，比如转换（transition, 嘌呤&lt;=&gt;嘌呤,嘧啶&lt;=&gt;嘧啶）发生的概率要高于颠换（transversion, 嘌呤&lt;=&gt;嘧啶,嘧啶&lt;=&gt;嘌呤）；物种在不同进化支系进化速率也存在差异；这些都决定选择压力不仅要考虑基因序列差异，同时也要考虑基因的不同位点以及改基因所属的物种在进化中的进化速率来综合决定该基因是受何种选择。</p>
+<p>Null hypothesis 零假设：所有lineage 有一个共同的w</p>
+<p>Alternative hypothesis 替代假设：一些lineage 有共同的 w </p>
+<p>不同的物种可能经历了不同的选择过程，因此 w值不同</p>
+<p>如果替代假设正确，就可以从中推断进化的情况。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Ka-Ks计算/">Ka Ks计算</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2021 John Doe
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
