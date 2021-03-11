@@ -1,139 +1,37 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>feeling of writring article | Hexo</title>
-
-  
-  <meta name="author" content="John Doe">
-  
-
-  
-  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
-  
-
-  
-  
-  <meta name="keywords" content="Article feeling">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="feeling of writring article"/>
-
-  <meta property="og:site_name" content="Hexo"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-<meta name="generator" content="Hexo 5.1.1"></head>
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<body>
-<div class="blog">
-  <div class="content">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">Hexo</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>feeling of writring article</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/15/feeling-of-writring-article/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-15T13:24:05.000Z">
-          2020-09-15
-        </time>
-      </a>
-    </span>
-  </div>
+{% block page_class %}page-post-detail{% endblock %}
 
 
-  
+{% block content %}
 
-  <div class="article-content">
-    <div class="entry">
-      
-        <div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">Hey, password is required here.</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="82a2b2c89a1cc35381d7f81c5c760a45ea500543e10f7b519abf983aaf21480a">950e91bd175e5893fe60ba8b9bd0c0897d1e1dbfb78a9f9d9ae6931798605b21f5fe48b9265a43372763e5c3af5ca58fe473621411ebc3821ad008a9166492655afaf1dfa4bf42b4450f9c0b10af49b7a088b23058b1bd47ef0195082973b28b5a674f076aa799786761e2c588e3e8e474627d6362e79b05351373c1e81d36fe20319b26e55eac0aa89030a9823f47da3530b96c2f558826fb35e4ef676270614535b0e12f18040671b344f4454e73f79baf2eaddf016ab6ea92a60dee82ea551df49221375a61cb47de6c9c712e84b3b104472fd1e02f4cd9cc45576e9b40f042431f4f3a6624889ed967bc961b7a5920720fac347da7cd4c93df95b24cb43576fdf33420aaa90ea20650c8185c5bbc2070328673a35297d78cd00c24c0771987f13aa52b149a232748e5bc3be6d9e4d419b42d15f952b15480be0cb5fa404a9ab98130f0df95784991ffc34c6363448c093e858cc36fbac5f797c8b604fa22e6ab2adf269798986a15394319c41bccde999859687210a45603a38363777e8aeac3a0b1c1cf68e305fda2f8d2fdff2a7f913a1059b5f55168f2779527bfe89cd17867312eed7d080b130fd1bb10c10cfb58008d35cae3a104b2376b3ec4304a0c7f77753494f70b66172a278a38f4148bd9ea9017c3efaa75fe0a20027537be6275f67eb4a34f97b7c195fe1107984d840fef0d4a846be46ed44ccc6119c69a04c910bc90ee351531c835fa98e07bd15119ea585861a79418776b1eab958f6d89220c76b74ed19460c40d6300e2b0799f191589941997c347666c792a56c704de8e674d25f63e9bbd1bb58f8d9ef2cfc37b8832d4dbcae70f4f5b28d0e16dc4d6934689cab3766b2bb3612ba5dc2cee8f9bf58723bb54e5a243927283c0afd003617ae191d06d087deb78e42044f9acf424632ba4b1d13f88a2966a9135552d5b5b57d2e87937043691dad6dd0936dfffc49d065d8cf947886bbd6d38b846ae0bdbf8c9a466a8265c4b90e84bb8842f020a5d76d1b40267dc2cb5bea458cdd3b772922af7cada62c82c21e828637095bc0c880dc8f53acaa69e2e7f6c018455edea1cc214cfb7dd314cd866f96062dd8540844565da1064782f3d6d84d8765ee6d8667ff38467e88c2157b64223e88af6f0a0377e2d7620d60be916a21b3cc9f16985c51974e54d1f1555735024cb8dde55f505803ab21ae3cdadeb4972531e2cca93e5e134632077ae4399c9afbe8f0d44c5f2f7b9016ff3ebf1cd60c9632de4671c0a76592b743b6ab113a2a649817b8d1e8cf16757426c8bd35f8e9113f22f3ee54c5ae49c76c4ead0d49f9d33ece41e7828ff6914b5fc4adbfa94dd056fbc9f8ed7853612ae7b9a57fac57bd00beea29b394671dfb872ee37dd2520d346f53946b0ad0afbd822b13fcc003d26a9c9363f2e35891202d7661950c6c0b07ad40dffc744d6a6929eece9f3546f89fbe711360f23658097e5f696b03cf6fd0efcc95e244c85c90a5914f94fa599c304fce8e172e4c5e6e3a9d1f6efa797ec86809266354bd622058c2bd4ab80f6d74783bb89c79afd1631ea7e79b0459db0db7fc33ef2aed640f0c8ff715f640acd9f</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
-      
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
+
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
-
   </div>
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
+{% endblock %}
 
-    
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Article-feeling/">Article feeling</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-  
-
-
-
-
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2021 John Doe
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

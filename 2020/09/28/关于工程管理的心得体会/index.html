@@ -1,139 +1,37 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>关于工程管理的心得体会 | Hexo</title>
-
-  
-  <meta name="author" content="John Doe">
-  
-
-  
-  <meta name="description" content="工程管理的的体会自己也算是快完成了自己的课题，在此记录自己的工程管理方面的得与失。
-我的工程就是我的课题，
-文件主要包括三类文件： 日志， 下载的数据， 还有脚本。
-我认为我在整个课题主线进行过程中日志跟进的很不错，具体表现在分类清晰，可以复现自己的分析。这方面我是参照：https://bioinf">
-  
-
-  
-  
-  <meta name="keywords" content="工程管理">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="关于工程管理的心得体会"/>
-
-  <meta property="og:site_name" content="Hexo"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-<meta name="generator" content="Hexo 5.1.1"></head>
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<body>
-<div class="blog">
-  <div class="content">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">Hexo</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>关于工程管理的心得体会</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/09/28/关于工程管理的心得体会/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-28T13:03:03.000Z">
-          2020-09-28
-        </time>
-      </a>
-    </span>
-  </div>
+{% block page_class %}page-post-detail{% endblock %}
 
 
-  
+{% block content %}
 
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="工程管理的的体会"><a href="#工程管理的的体会" class="headerlink" title="工程管理的的体会"></a><strong>工程管理的的体会</strong></h3><p>自己也算是快完成了自己的课题，在此记录自己的工程管理方面的得与失。</p>
-<p>我的工程就是我的课题，</p>
-<p>文件主要包括三类文件： 日志， 下载的数据， 还有脚本。</p>
-<p>我认为我在整个课题主线进行过程中日志跟进的很不错，具体表现在分类清晰，可以复现自己的分析。<br>这方面我是参照：<br><a target="_blank" rel="noopener" href="https://bioinformaticsworkbook.org/projectManagement/projectManagement_index#gsc.tab=0%EF%BC%8C">https://bioinformaticsworkbook.org/projectManagement/projectManagement_index#gsc.tab=0，</a><br>整理的日志。</p>
-<p>但是最让我头痛的是一些自己的个性化的零零碎碎的分析。总是串不到一起，而且组织很凌乱。<br>刚才我突然想到一个解决办法，可以按照主线组织零碎文件。比如我的课题主要是三大方面，在三个主要日志的基础上，完全可以另建一个日志，但是不要建立太多的日志，<br>否则不久就会凌乱，还有重要是每天都要熟悉自己的日志文件，这方面自己做的不好。还有像R和python直接就在主目录建立工程，之后目录也容易管理。</p>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-      
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
-
   </div>
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
+{% endblock %}
 
-    
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/工程管理/">工程管理</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-  
-
-
-
-
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2021 John Doe
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}

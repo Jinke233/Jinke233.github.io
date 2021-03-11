@@ -1,174 +1,37 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>ClusterProfiler 进行通用富集分析 | Hexo</title>
-
-  
-  <meta name="author" content="John Doe">
-  
-
-  
-  <meta name="description" content="这两天一直帮师妹做富集分析。因为茶树是非模式物种，所以没有自己orgdb包。虽然自己能够构建物种包，但是就只是做个富集分析，所以就使用ClusterProfiler的通用富集分析enricher函数，进行富集分析。
-1234567ego &amp;lt;- enricher(gene_list,      ">
-  
-
-  
-  
-  <meta name="keywords" content="Universal Enrichment Analysis">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="ClusterProfiler 进行通用富集分析"/>
-
-  <meta property="og:site_name" content="Hexo"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-<meta name="generator" content="Hexo 5.1.1"></head>
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-<body>
-<div class="blog">
-  <div class="content">
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">Hexo</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>ClusterProfiler 进行通用富集分析</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2021/03/11/ClusterProfiler-进行通用富集分析/" rel="bookmark">
-        <time class="entry-date published" datetime="2021-03-11T08:09:35.000Z">
-          2021-03-11
-        </time>
-      </a>
-    </span>
-  </div>
+{% block page_class %}page-post-detail{% endblock %}
 
 
-  
+{% block content %}
 
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>  这两天一直帮师妹做富集分析。因为茶树是非模式物种，所以没有自己orgdb包。虽然自己能够构建物种包，但是就只是做个富集分析，所以就使用ClusterProfiler的通用富集分析enricher函数，进行富集分析。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ego &lt;- enricher(gene_list, </span><br><span class="line">                TERM2GENE = go2gene, </span><br><span class="line">                TERM2NAME = go2name, </span><br><span class="line">                pvalueCutoff = <span class="number">0.05</span>, </span><br><span class="line">                qvalueCutoff = <span class="number">0.05</span>,</span><br><span class="line">                pAdjustMethod = <span class="string">&quot;fdr&quot;</span>,</span><br><span class="line">                minGSSize = <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-
-
-<p>核心点是 自己准备TERM2GENE 和   TERM2NAME 文件</p>
-<p>TERM2GENE</p>
-<table>
-<thead>
-<tr>
-<th align="center">Term</th>
-<th align="center">Gene</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">GO:000001</td>
-<td align="center">TEA000001</td>
-</tr>
-<tr>
-<td align="center">GO:000002</td>
-<td align="center">TEA000002</td>
-</tr>
-</tbody></table>
-<p>TERM2NAME</p>
-<table>
-<thead>
-<tr>
-<th align="center">Term</th>
-<th align="center">Gene</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">GO:000001</td>
-<td align="center">Amine Transport</td>
-</tr>
-<tr>
-<td align="center">GO:000002</td>
-<td align="center">Amino Absorb</td>
-</tr>
-</tbody></table>
-<p>里面的意思是我随手写的，但是所有文件都可以自己从TPIA文件整理数据获得。</p>
-<p>KO富集分析同理</p>
-
-      
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
-
   </div>
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
+{% endblock %}
 
-    
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Universal-Enrichment-Analysis/">Universal Enrichment Analysis</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-  
-
-
-
-
-
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2021 John Doe
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
