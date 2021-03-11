@@ -55,6 +55,100 @@
 
   
     
+    <h3 class="article-title"><a href="/2021/03/11/ClusterProfiler-进行通用富集分析/"><span>ClusterProfiler 进行通用富集分析</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/03/11/ClusterProfiler-进行通用富集分析/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-03-11T08:09:35.000Z">
+          2021-03-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>  这两天一直帮师妹做富集分析。因为茶树是非模式物种，所以没有自己orgdb包。虽然自己能够构建物种包，但是就只是做个富集分析，所以就使用ClusterProfiler的通用富集分析enricher函数，进行富集分析。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ego &lt;- enricher(gene_list, </span><br><span class="line">                TERM2GENE = go2gene, </span><br><span class="line">                TERM2NAME = go2name, </span><br><span class="line">                pvalueCutoff = <span class="number">0.05</span>, </span><br><span class="line">                qvalueCutoff = <span class="number">0.05</span>,</span><br><span class="line">                pAdjustMethod = <span class="string">&quot;fdr&quot;</span>,</span><br><span class="line">                minGSSize = <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>核心点是 自己准备TERM2GENE 和   TERM2NAME 文件</p>
+<p>TERM2GENE</p>
+<table>
+<thead>
+<tr>
+<th align="center">Term</th>
+<th align="center">Gene</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GO:000001</td>
+<td align="center">TEA000001</td>
+</tr>
+<tr>
+<td align="center">GO:000002</td>
+<td align="center">TEA000002</td>
+</tr>
+</tbody></table>
+<p>TERM2NAME</p>
+<table>
+<thead>
+<tr>
+<th align="center">Term</th>
+<th align="center">Gene</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GO:000001</td>
+<td align="center">Amine Transport</td>
+</tr>
+<tr>
+<td align="center">GO:000002</td>
+<td align="center">Amino Absorb</td>
+</tr>
+</tbody></table>
+<p>里面的意思是我随手写的，但是所有文件都可以自己从TPIA文件整理数据获得。</p>
+<p>KO富集分析同理</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Universal-Enrichment-Analysis/">Universal Enrichment Analysis</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2021/03/07/硕士论文书写心得/"><span>硕士论文书写心得</span></a></h3>
     
   
@@ -523,123 +617,6 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/h5文件/">h5文件</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/10/19/matplotlib-学习/"><span>matplotlib 学习</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/10/19/matplotlib-学习/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-10-19T13:16:06.000Z">
-          2020-10-19
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p> 使用 Matplotlib 提供的面向对象 API，需要导入 <code>pyplot</code> 模块，并约定简称为 <code>plt</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
-
-<p><code>pyplot</code> 模块中 <code>pyplot.plot</code> 方法是用来绘制折线图的。你应该会很容易联想到，更改后面的方法类名就可以更改图形的样式。的确，在 Matplotlib 中，大部分图形样式的绘制方法都存在于 <code>pyplot</code> 模块中。例如：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>matplotlib.pyplot.angle_spectrum</code></td>
-<td>绘制电子波谱图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.bar</code></td>
-<td>绘制柱状图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.barh</code></td>
-<td>绘制直方图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.broken_barh</code></td>
-<td>绘制水平直方图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.contour</code></td>
-<td>绘制等高线图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.errorbar</code></td>
-<td>绘制误差线</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.hexbin</code></td>
-<td>绘制六边形图案</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.hist</code></td>
-<td>绘制柱形图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.hist2d</code></td>
-<td>绘制水平柱状图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.pie</code></td>
-<td>绘制饼状图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.quiver</code></td>
-<td>绘制量场图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.scatter</code></td>
-<td>散点图</td>
-</tr>
-<tr>
-<td><code>matplotlib.pyplot.specgram</code></td>
-<td>绘制光谱图</td>
-</tr>
-</tbody></table>
-<p><code>matplotlib.pyplot.plot(*args, **kwargs)</code> 方法严格来讲可以绘制线形图或者样本标记。其中，<code>*args</code> 允许输入单个 <em>𝑦</em> 值或 <em>𝑥</em>,<em>𝑦</em> 值</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/matplotlib-指引/">matplotlib 指引</a>
     </span>
     
 
