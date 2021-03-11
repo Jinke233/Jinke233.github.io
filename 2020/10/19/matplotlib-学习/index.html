@@ -1,37 +1,300 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
+  
+  <title>matplotlib 学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用 Matplotlib 提供的面向对象 API，需要导入 pyplot 模块，并约定简称为 plt。 1from matplotlib import pyplot as plt  pyplot 模块中 pyplot.plot 方法是用来绘制折线图的。你应该会很容易联想到，更改后面的方法类名就可以更改图形的样式。的确，在 Matplotlib 中，大部分图形样式的绘制方法都存在于 pyplot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matplotlib 学习">
+<meta property="og:url" content="http://example.com/2020/10/19/matplotlib-%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用 Matplotlib 提供的面向对象 API，需要导入 pyplot 模块，并约定简称为 plt。 1from matplotlib import pyplot as plt  pyplot 模块中 pyplot.plot 方法是用来绘制折线图的。你应该会很容易联想到，更改后面的方法类名就可以更改图形的样式。的确，在 Matplotlib 中，大部分图形样式的绘制方法都存在于 pyplot">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-19T13:16:06.000Z">
+<meta property="article:modified_time" content="2020-11-21T13:13:56.805Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="matplotlib 指引">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+<meta name="generator" content="Hexo 5.1.1"></head>
 
-{% block page_class %}page-post-detail{% endblock %}
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-matplotlib-学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/19/matplotlib-%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-10-19T13:16:06.000Z" itemprop="datePublished">2020-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      matplotlib 学习
+    </h1>
+  
 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 使用 Matplotlib 提供的面向对象 API，需要导入 <code>pyplot</code> 模块，并约定简称为 <code>plt</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
 
-{% block content %}
+<p><code>pyplot</code> 模块中 <code>pyplot.plot</code> 方法是用来绘制折线图的。你应该会很容易联想到，更改后面的方法类名就可以更改图形的样式。的确，在 Matplotlib 中，大部分图形样式的绘制方法都存在于 <code>pyplot</code> 模块中。例如：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>matplotlib.pyplot.angle_spectrum</code></td>
+<td>绘制电子波谱图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.bar</code></td>
+<td>绘制柱状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.barh</code></td>
+<td>绘制直方图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.broken_barh</code></td>
+<td>绘制水平直方图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.contour</code></td>
+<td>绘制等高线图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.errorbar</code></td>
+<td>绘制误差线</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hexbin</code></td>
+<td>绘制六边形图案</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hist</code></td>
+<td>绘制柱形图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.hist2d</code></td>
+<td>绘制水平柱状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.pie</code></td>
+<td>绘制饼状图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.quiver</code></td>
+<td>绘制量场图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.scatter</code></td>
+<td>散点图</td>
+</tr>
+<tr>
+<td><code>matplotlib.pyplot.specgram</code></td>
+<td>绘制光谱图</td>
+</tr>
+</tbody></table>
+<p><code>matplotlib.pyplot.plot(*args, **kwargs)</code> 方法严格来讲可以绘制线形图或者样本标记。其中，<code>*args</code> 允许输入单个 <em>𝑦</em> 值或 <em>𝑥</em>,<em>𝑦</em> 值</p>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/19/matplotlib-%E5%AD%A6%E4%B9%A0/" data-id="ckht71jp4000lisu4gxzg1q4t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li></ul>
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/21/h5%E6%96%87%E4%BB%B6%E7%AE%80%E4%BB%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          h5文件简介
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/19/numpy-%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">numpy 学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5%E6%96%87%E4%BB%B6/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E5%8F%97/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">Ka Ks计算</a> <a href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="/tags/h5%E6%96%87%E4%BB%B6/" style="font-size: 10px;">h5文件</a> <a href="/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">matplotlib 指引</a> <a href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">numpy 学习</a> <a href="/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" style="font-size: 10px;">基因 水平转移</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 10px;">工程管理</a> <a href="/tags/%E6%84%9F%E5%8F%97/" style="font-size: 10px;">感受</a> <a href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" style="font-size: 10px;">转录组</a>
+    </div>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/11/ClusterProfiler-%E8%BF%9B%E8%A1%8C%E9%80%9A%E7%94%A8%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/">ClusterProfiler 进行通用富集分析</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/07/%E7%A1%95%E5%A3%AB%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%E5%BF%83%E5%BE%97/">硕士论文书写心得</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/31/NNL/">NNL</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/22/Stardock-Fence-%E6%8A%A5%E9%94%99/">Stardock Fence 报错</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/23/Kaks%E8%AE%A1%E7%AE%97/">Kaks计算</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
