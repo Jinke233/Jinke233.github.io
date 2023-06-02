@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives | Hexo</title>
+  <title>hyphy_note | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/page/3/index.html">
+  <meta name="description" content="上个星期和一位老师交流，老师问我有没有用过hyphy这个软件，我当时说不知道，所以赶紧回来学习一下。 Hyphy - Hypothesis testing using Phylogenies Hyphy is an open-source software package for the analysis of genetic sequences using techniques in phylo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hyphy_note">
+<meta property="og:url" content="http://example.com/2023/06/01/hyphy-note/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="上个星期和一位老师交流，老师问我有没有用过hyphy这个软件，我当时说不知道，所以赶紧回来学习一下。 Hyphy - Hypothesis testing using Phylogenies Hyphy is an open-source software package for the analysis of genetic sequences using techniques in phylo">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-01T03:31:37.000Z">
+<meta property="article:modified_time" content="2023-06-02T08:48:22.423Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hyphy">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -62,216 +67,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/19/numpy-%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  <time datetime="2020-10-19T11:52:53.000Z" itemprop="datePublished">Oct 19</time>
+        <section id="main"><article id="post-hyphy-note" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/06/01/hyphy-note/" class="article-date">
+  <time datetime="2023-06-01T03:31:37.000Z" itemprop="datePublished">2023-06-01</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/19/numpy-%E5%AD%A6%E4%B9%A0/">numpy 学习</a>
+    <h1 class="article-title" itemprop="name">
+      hyphy_note
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/19/Jupyter-notebook-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  <time datetime="2020-10-19T11:47:35.000Z" itemprop="datePublished">Oct 19</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/19/Jupyter-notebook-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">Jupyter-notebook 使用手册</a>
-    </h1>
-  
+        <p>上个星期和一位老师交流，老师问我有没有用过<strong>hyphy</strong>这个软件，我当时说不知道，所以赶紧回来学习一下。</p>
+<p>Hyphy - Hypothesis testing using Phylogenies</p>
+<p>Hyphy is an open-source software package for the analysis of genetic sequences using techniques in phylogenetics, molecular evolution, and machine learning. It features a complete graphical user interface (<strong>GUI</strong>) and a rich scripting language for limitless customization of analyses. Additionally, Hyphy features support for parallel computing environments (via message passing interface (MPI))  and it can be complied as a  shared library and called from other programming environments such as Python and R. Hyphy is the computational backbone powering datamonkey.org. </p>
+<p>虽然github介绍有GUI界面但是GUI界面版本的Hyphy已经不在维护，要么使用CLI，或者使用在线网站datamonkey。</p>
+<p>首先正选择分析一般使用PAML，Easycodeml,hyphy分析.</p>
+<p>以PAML为例 会使用三种模型</p>
+<p>site 模型，branch模型,branch-site模型，我刚大致看了几篇文章，和预期的类似一般会选择branch-site模型。之所以不简单使用dn/ds计算是因为这种方式十分严格。</p>
+<p>某些文献称：</p>
+<p>branch模型鉴定出来的基因成为<strong>快速进化基因</strong></p>
+<p>branch-site模型鉴定出来的基因成为<strong>正选择基因</strong></p>
+<p>但是我发现hyphy的aBSREL(adaptive brach-site random effects likelihood)模型是鉴定clade是否快速演化，</p>
+<p>BUSTED (branch-site unrestricted statistical test for episodic diversification)检验某个基因在特定预设分支上是否经历了选择。 </p>
+<p><a target="_blank" rel="noopener" href="https://hyphy.org/methods/selection-methods/#busted">BUSTED</a> (<strong>B</strong>ranch-<strong>S</strong>ite <strong>U</strong>nrestricted <strong>S</strong>tatistical <strong>T</strong>est for <strong>E</strong>pisodic <strong>D</strong>iversification) will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. <strong>This method is not suitable for identifying specific sites subject to positive selection</strong>   资料提到BUSTED表现比PAML的branch-site模型表现更好。</p>
+<p>如果需要 执行 episodic selection at individual sites</p>
+<p><a target="_blank" rel="noopener" href="https://hyphy.org/methods/selection-methods/#meme">MEME</a> (<strong>M</strong>ixed <strong>E</strong>ffects <strong>M</strong>odel of <strong>E</strong>volution) tests for episodic selection at individual sites. Note that MEME does not accept <em>a priori</em> branch specifications (this feature is being introduced with <code>v2.3-dev</code> and later). <strong>MEME is the preferred approach for detecting positive selection at individual sites.</strong></p>
+<p>总的来说，HYPHY和PAML都是常用的分析软件，我自己对PAML更熟悉一点，因为之前在推断分化时间和进行kaks分析时候，我仔细阅读过PAML的一些学习资料，PAML的输入格式严格，我曾经因为基因名字太长，导致提取输出结果和基因名字之间的空格不存在了，然后一直报错，最后用KaKs_calculator完成交付之后，再仔细研究PAML的输出才发现。而且PAML在推断分化时间和计算dn/ds要求的格式又不一样，有一个要求的比较松弛,hyphy可能会好很多。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/16/2020%E5%85%A8%E5%9B%BD%E6%A4%8D%E7%89%A9%E5%AD%A6%E5%A4%A7%E4%BC%9A/" class="archive-article-date">
-  <time datetime="2020-10-16T06:35:34.000Z" itemprop="datePublished">Oct 16</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/16/2020%E5%85%A8%E5%9B%BD%E6%A4%8D%E7%89%A9%E5%AD%A6%E5%A4%A7%E4%BC%9A/">2020全国植物学大会</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/13/python-%E8%B0%83%E8%AF%95/" class="archive-article-date">
-  <time datetime="2020-10-13T08:09:10.000Z" itemprop="datePublished">Oct 13</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/01/hyphy-note/" data-id="cliebnx0q0000ks74cpmq6u1s" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/python-%E8%B0%83%E8%AF%95/">python 调试</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/13/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="archive-article-date">
-  <time datetime="2020-10-13T07:36:21.000Z" itemprop="datePublished">Oct 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">python 虚拟环境</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/09/zhiwuxue-fenlei/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">zhiwuxue_fenlei</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/07/Transition-and-Transversion/" class="archive-article-date">
-  <time datetime="2020-10-07T14:26:59.000Z" itemprop="datePublished">Oct 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/07/Transition-and-Transversion/">Transition and Transversion</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/09/28/%E5%85%B3%E4%BA%8E%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/" class="archive-article-date">
-  <time datetime="2020-09-28T13:03:03.000Z" itemprop="datePublished">Sep 28</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/28/%E5%85%B3%E4%BA%8E%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/">关于工程管理的心得体会</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/09/24/Git-command/" class="archive-article-date">
-  <time datetime="2020-09-24T14:21:12.000Z" itemprop="datePublished">Sep 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/24/Git-command/">Git command</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/09/24/%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AEwin10%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  <time datetime="2020-09-24T02:19:54.000Z" itemprop="datePublished">Sep 24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/24/%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AEwin10%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/">手动设置win10开机启动程序</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/09/21/theanine-metabolism-pathway-evolution/" class="archive-article-date">
-  <time datetime="2020-09-21T09:17:09.000Z" itemprop="datePublished">Sep 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/21/theanine-metabolism-pathway-evolution/">theanine metabolism pathway evolution</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/archives/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/">Next &amp;raquo;</a>
-  </nav>
 
 </section>
         
