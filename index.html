@@ -88,10 +88,8 @@
       
         <p>我自己不知道写的对不对，但是之前已经有两个老师问过我这个问题，但是他们也没有给我明确的答复。</p>
 <p>粗略的答案就是orthofinder 一键输入自动输出orthologs,orthogroups，gene tree,species tree等文件。</p>
-<p>但是我觉得精细的答案是orthofinder之所以推断的orthologroups更准确，是因为在第一个版本的orthofinder就详细阐述了基于基因长度和系统发育距离对BLAST hits得分进行标准化，再用这些标准化的bit score得到RBNH(Reciporal best length normalized hit),再基于RNBH得到一个初步的同源组基因序列的阈值，最后MCL算法聚类得到直系同源组。</p>
-<blockquote>
-<p>OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy</p>
-</blockquote>
+<p>但是我觉得精细的答案是orthofinder之所以推断的orthologroups更准确，是因为在第一个版本的orthofinder（OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy）</p>
+<p>就详细阐述了基于基因长度和系统发育距离对BLAST hits得分进行标准化，再用这些标准化的bit score得到RBNH(Reciporal best length normalized hit),再基于RNBH得到一个初步的同源组基因序列的阈值，最后MCL算法聚类得到直系同源组。</p>
 <p>orthofinder之所以后续结果准确率高都是因为前期充分考虑了基因长度对鉴定相似基因造成的误差，不知道我说的对不对。</p>
 
       
