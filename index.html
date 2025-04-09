@@ -14,18 +14,18 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="H:\Blog_Djk\Hexo\source\_posts/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="H:\Blog_Djk\Hexo\source\_posts/favicon.png">
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="H:\Blog_Djk\Hexo\source\_posts/css/style.css">
 
   
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="H:\Blog_Djk\Hexo\source\_posts/fancybox/jquery.fancybox.min.css">
 
   
   
@@ -41,7 +41,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="H:\Blog_Djk\Hexo\source\_posts/" id="logo">Hexo</a>
       </h1>
       
     </div>
@@ -49,15 +49,15 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="H:\Blog_Djk\Hexo\source\_posts/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="H:\Blog_Djk\Hexo\source\_posts/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="H:\Blog_Djk\Hexo\source\_posts/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
         <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
@@ -73,7 +73,7 @@
   
     <article id="post-hexo迁移遇到的一些问题汇总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/04/09/hexo%E8%BF%81%E7%A7%BB%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2025/04/09/hexo迁移遇到的一些问题汇总/" class="article-date">
   <time class="dt-published" datetime="2025-04-09T04:09:16.000Z" itemprop="datePublished">2025-04-09</time>
 </a>
     
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/04/09/hexo%E8%BF%81%E7%A7%BB%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">hexo迁移遇到的一些问题汇总</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2025/04/09/hexo迁移遇到的一些问题汇总/">hexo迁移遇到的一些问题汇总</a>
     </h1>
   
 
@@ -93,7 +93,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="clash配置自定义规则"><a href="#clash配置自定义规则" class="headerlink" title="clash配置自定义规则"></a>clash配置自定义规则</h3><p><img src="/hexo%E8%BF%81%E7%A7%BB%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/image.png" alt="image.png"></p>
+        <h3 id="clash配置自定义规则"><a href="#clash配置自定义规则" class="headerlink" title="clash配置自定义规则"></a>clash配置自定义规则</h3><p><img src="H:\Blog_Djk\Hexo\source\_posts/hexo迁移遇到的一些问题汇总/image.png" alt="image.png"></p>
 <p>直接在全局扩展覆写配置里配置需求，我的需求是ubuntu国内镜像直连，所以模板是</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">prepend-rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,aliyun.com,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,tuna.tsinghua.edu.cn,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,ustc.edu.cn,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,mirrors,DIRECT</span></span><br><span class="line"></span><br><span class="line"><span class="attr">prepend-proxies:</span> []</span><br><span class="line"></span><br><span class="line"><span class="attr">prepend-proxy-groups:</span> []</span><br><span class="line"></span><br><span class="line"><span class="attr">append-rules:</span> []</span><br><span class="line"></span><br><span class="line"><span class="attr">append-proxies:</span> []</span><br><span class="line"></span><br><span class="line"><span class="attr">append-proxy-groups:</span> []</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -108,11 +108,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/04/09/hexo%E8%BF%81%E7%A7%BB%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-id="cm99fj9770000s1t8cuv7aty6" data-title="hexo迁移遇到的一些问题汇总" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/04/09/hexo%E8%BF%81%E7%A7%BB%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" data-id="cm99kudyb001a56t8d92e69q0" data-title="hexo迁移遇到的一些问题汇总" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo%E8%BF%81%E7%A7%BB/" rel="tag">hexo迁移</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/hexo迁移/" rel="tag">hexo迁移</a></li></ul>
 
     </footer>
   </div>
@@ -124,7 +124,7 @@
   
     <article id="post-PPT-experience" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/28/PPT-experience/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2024/03/28/PPT-experience/" class="article-date">
   <time class="dt-published" datetime="2024-03-27T16:46:45.000Z" itemprop="datePublished">2024-03-28</time>
 </a>
     
@@ -136,7 +136,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/28/PPT-experience/">PPT_experience</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2024/03/28/PPT-experience/">PPT_experience</a>
     </h1>
   
 
@@ -159,11 +159,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/28/PPT-experience/" data-id="cm99ed0uz000qp2t8egz5c6vn" data-title="PPT_experience" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/28/PPT-experience/" data-id="cm99kudy3000s56t89c5n3mtq" data-title="PPT_experience" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/PPT/" rel="tag">PPT</a></li></ul>
 
     </footer>
   </div>
@@ -175,7 +175,7 @@
   
     <article id="post-Orthofinder和OrthoMCL的区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2023/06/25/Orthofinder和OrthoMCL的区别/" class="article-date">
   <time class="dt-published" datetime="2023-06-25T08:35:30.000Z" itemprop="datePublished">2023-06-25</time>
 </a>
     
@@ -187,7 +187,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/">Orthofinder和OrthoMCL的区别</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2023/06/25/Orthofinder和OrthoMCL的区别/">Orthofinder和OrthoMCL的区别</a>
     </h1>
   
 
@@ -204,11 +204,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cm99ed0uz000op2t8grhj5oxa" data-title="Orthofinder和OrthoMCL的区别" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cm99kudy0000o56t892vwbhk1" data-title="Orthofinder和OrthoMCL的区别" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li></ul>
 
     </footer>
   </div>
@@ -220,7 +220,7 @@
   
     <article id="post-pico-配置图床" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/06/05/pico-%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2023/06/05/pico-配置图床/" class="article-date">
   <time class="dt-published" datetime="2023-06-05T09:34:03.000Z" itemprop="datePublished">2023-06-05</time>
 </a>
     
@@ -232,7 +232,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/05/pico-%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/">pico_配置图床</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2023/06/05/pico-配置图床/">pico_配置图床</a>
     </h1>
   
 
@@ -251,11 +251,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/06/05/pico-%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/" data-id="cm99ed0v8001gp2t842nz7gz1" data-title="pico_配置图床" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/06/05/pico-%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/" data-id="cm99kudyg001k56t87y1s6pwe" data-title="pico_配置图床" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/图床/" rel="tag">图床</a></li></ul>
 
     </footer>
   </div>
@@ -267,7 +267,7 @@
   
     <article id="post-hyphy-note" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/06/01/hyphy-note/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2023/06/01/hyphy-note/" class="article-date">
   <time class="dt-published" datetime="2023-06-01T03:31:37.000Z" itemprop="datePublished">2023-06-01</time>
 </a>
     
@@ -279,7 +279,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/01/hyphy-note/">hyphy_note</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2023/06/01/hyphy-note/">hyphy_note</a>
     </h1>
   
 
@@ -307,11 +307,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/06/01/hyphy-note/" data-id="cm99ed0v20011p2t85o0q7toh" data-title="hyphy_note" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/06/01/hyphy-note/" data-id="cm99kudy9001756t87lrsff3d" data-title="hyphy_note" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/hyphy/" rel="tag">hyphy</a></li></ul>
 
     </footer>
   </div>
@@ -323,7 +323,7 @@
   
     <article id="post-zhiwuxue-fenlei" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/04/09/zhiwuxue-fenlei/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2023/04/09/zhiwuxue-fenlei/" class="article-date">
   <time class="dt-published" datetime="2023-04-09T13:56:40.000Z" itemprop="datePublished">2023-04-09</time>
 </a>
     
@@ -335,7 +335,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/09/zhiwuxue-fenlei/">zhiwuxue_fenlei</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2023/04/09/zhiwuxue-fenlei/">zhiwuxue_fenlei</a>
     </h1>
   
 
@@ -362,11 +362,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/09/zhiwuxue-fenlei/" data-id="cm99ed0v9001qp2t8hc7cbcwl" data-title="zhiwuxue_fenlei" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/04/09/zhiwuxue-fenlei/" data-id="cm99kudyi001o56t88xb9b6oe" data-title="zhiwuxue_fenlei" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" rel="tag">植物学 分类</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/植物学-分类/" rel="tag">植物学 分类</a></li></ul>
 
     </footer>
   </div>
@@ -378,7 +378,7 @@
   
     <article id="post-My-new-post-0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/07/19/My-new-post-0/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2022/07/19/My-new-post-0/" class="article-date">
   <time class="dt-published" datetime="2022-07-18T17:27:45.000Z" itemprop="datePublished">2022-07-19</time>
 </a>
     
@@ -390,7 +390,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/19/My-new-post-0/">My new post</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2022/07/19/My-new-post-0/">My new post</a>
     </h1>
   
 
@@ -402,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/19/My-new-post-0/" data-id="cm99ed0uy000ip2t89u715gld" data-title="My new post" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2022/07/19/My-new-post-0/" data-id="cm99kudxz000k56t8cncoecm0" data-title="My new post" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -416,7 +416,7 @@
   
     <article id="post-JavaScript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/04/18/JavaScript/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2021/04/18/JavaScript/" class="article-date">
   <time class="dt-published" datetime="2021-04-18T13:07:18.000Z" itemprop="datePublished">2021-04-18</time>
 </a>
     
@@ -428,7 +428,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/18/JavaScript/">JavaScript</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2021/04/18/JavaScript/">JavaScript</a>
     </h1>
   
 
@@ -451,11 +451,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/18/JavaScript/" data-id="cm99ed0uv000cp2t864137hln" data-title="JavaScript" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2021/04/18/JavaScript/" data-id="cm99kudxs000b56t8diuog41a" data-title="JavaScript" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Javascript/" rel="tag">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -467,7 +467,7 @@
   
     <article id="post-platanus" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/04/18/platanus/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2021/04/18/platanus/" class="article-date">
   <time class="dt-published" datetime="2021-04-18T06:34:47.000Z" itemprop="datePublished">2021-04-18</time>
 </a>
     
@@ -479,7 +479,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/18/platanus/">platanus</a>
+      <a class="p-name article-title" href="H:\Blog_Djk\Hexo\source\_posts/2021/04/18/platanus/">platanus</a>
     </h1>
   
 
@@ -517,11 +517,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/18/platanus/" data-id="cm99ed0v60019p2t8eq2uei1r" data-title="platanus" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2021/04/18/platanus/" data-id="cm99kudyd001e56t81yiz7gun" data-title="platanus" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Platanus/" rel="tag">Platanus</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Platanus/" rel="tag">Platanus</a></li></ul>
 
     </footer>
   </div>
@@ -533,7 +533,7 @@
   
     <article id="post-HTML" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/04/17/HTML/" class="article-date">
+    <a href="H:\Blog_Djk\Hexo\source\_posts/2021/04/17/HTML/" class="article-date">
   <time class="dt-published" datetime="2021-04-17T07:06:25.000Z" itemprop="datePublished">2021-04-17</time>
 </a>
     
@@ -691,11 +691,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/17/HTML/" data-id="cm99ed0uu0008p2t86htsbpp0" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2021/04/17/HTML/" data-id="cm99kudxv000f56t82eaacmsg" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/HTML/" rel="tag">HTML</a></li></ul>
 
     </footer>
   </div>
@@ -709,7 +709,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="H:\Blog_Djk\Hexo\source\_posts/page/2/">2</a><a class="page-number" href="H:\Blog_Djk\Hexo\source\_posts/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="H:\Blog_Djk\Hexo\source\_posts/page/5/">5</a><a class="extend next" rel="next" href="H:\Blog_Djk\Hexo\source\_posts/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -723,7 +723,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Platanus/" rel="tag">Platanus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5%E6%96%87%E4%BB%B6/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E8%BF%81%E7%A7%BB/" rel="tag">hexo迁移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snakemake/" rel="tag">snakemake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E5%8F%97/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" rel="tag">植物学 分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Jupyter-notebook-指引/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Ka-Ks计算/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Platanus/" rel="tag">Platanus</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Rosalind-点突变-转换和颠换/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/h5文件/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/hexo迁移/" rel="tag">hexo迁移</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/hyphy/" rel="tag">hyphy</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/matplotlib-指引/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/numpy-学习/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/snakemake/" rel="tag">snakemake</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/图床/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/基因-水平转移/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/工程管理/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/感受/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/根瘤进化-NNL-评论/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/植物学-分类/" rel="tag">植物学 分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/虚拟环境-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="H:\Blog_Djk\Hexo\source\_posts/tags/转录组/" rel="tag">转录组</a></li></ul>
     </div>
   </div>
 
@@ -733,7 +733,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="/tags/FPKM-TPM/" style="font-size: 10px;">FPKM TPM</a> <a href="/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">Ka Ks计算</a> <a href="/tags/Orthofinder-OrthoMCL/" style="font-size: 10px;">Orthofinder OrthoMCL</a> <a href="/tags/PPT/" style="font-size: 10px;">PPT</a> <a href="/tags/Platanus/" style="font-size: 10px;">Platanus</a> <a href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="/tags/h5%E6%96%87%E4%BB%B6/" style="font-size: 10px;">h5文件</a> <a href="/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="/tags/hexo%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">hexo迁移</a> <a href="/tags/hyphy/" style="font-size: 10px;">hyphy</a> <a href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">matplotlib 指引</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">numpy 学习</a> <a href="/tags/orthofinder-orthomcl/" style="font-size: 10px;">orthofinder  orthomcl</a> <a href="/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="/tags/snakemake/" style="font-size: 10px;">snakemake</a> <a href="/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" style="font-size: 10px;">基因 水平转移</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 10px;">工程管理</a> <a href="/tags/%E6%84%9F%E5%8F%97/" style="font-size: 10px;">感受</a> <a href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" style="font-size: 10px;">植物学 分类</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" style="font-size: 10px;">转录组</a>
+      <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/FPKM-TPM/" style="font-size: 10px;">FPKM TPM</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Git/" style="font-size: 10px;">Git</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Jupyter-notebook-指引/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Ka-Ks计算/" style="font-size: 10px;">Ka Ks计算</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Orthofinder-OrthoMCL/" style="font-size: 10px;">Orthofinder OrthoMCL</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/PPT/" style="font-size: 10px;">PPT</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Platanus/" style="font-size: 10px;">Platanus</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Rosalind-点突变-转换和颠换/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/h5文件/" style="font-size: 10px;">h5文件</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/hexo迁移/" style="font-size: 10px;">hexo迁移</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/hyphy/" style="font-size: 10px;">hyphy</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/matplotlib-指引/" style="font-size: 10px;">matplotlib 指引</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/numpy-学习/" style="font-size: 10px;">numpy 学习</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/orthofinder-orthomcl/" style="font-size: 10px;">orthofinder  orthomcl</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/snakemake/" style="font-size: 10px;">snakemake</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/图床/" style="font-size: 10px;">图床</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/基因-水平转移/" style="font-size: 10px;">基因 水平转移</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/工程管理/" style="font-size: 10px;">工程管理</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/感受/" style="font-size: 10px;">感受</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/根瘤进化-NNL-评论/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/植物学-分类/" style="font-size: 10px;">植物学 分类</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/虚拟环境-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="H:\Blog_Djk\Hexo\source\_posts/tags/转录组/" style="font-size: 10px;">转录组</a>
     </div>
   </div>
 
@@ -742,7 +742,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="H:\Blog_Djk\Hexo\source\_posts/archives/1970/01/">January 1970</a></li></ul>
     </div>
   </div>
 
@@ -755,23 +755,23 @@
       <ul>
         
           <li>
-            <a href="/2025/04/09/hexo%E8%BF%81%E7%A7%BB%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">hexo迁移遇到的一些问题汇总</a>
+            <a href="H:\Blog_Djk\Hexo\source\_posts/2025/04/09/hexo迁移遇到的一些问题汇总/">hexo迁移遇到的一些问题汇总</a>
           </li>
         
           <li>
-            <a href="/2024/03/28/PPT-experience/">PPT_experience</a>
+            <a href="H:\Blog_Djk\Hexo\source\_posts/2024/03/28/PPT-experience/">PPT_experience</a>
           </li>
         
           <li>
-            <a href="/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/">Orthofinder和OrthoMCL的区别</a>
+            <a href="H:\Blog_Djk\Hexo\source\_posts/2023/06/25/Orthofinder和OrthoMCL的区别/">Orthofinder和OrthoMCL的区别</a>
           </li>
         
           <li>
-            <a href="/2023/06/05/pico-%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/">pico_配置图床</a>
+            <a href="H:\Blog_Djk\Hexo\source\_posts/2023/06/05/pico-配置图床/">pico_配置图床</a>
           </li>
         
           <li>
-            <a href="/2023/06/01/hyphy-note/">hyphy_note</a>
+            <a href="H:\Blog_Djk\Hexo\source\_posts/2023/06/01/hyphy-note/">hyphy_note</a>
           </li>
         
       </ul>
@@ -796,25 +796,25 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="H:\Blog_Djk\Hexo\source\_posts/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="H:\Blog_Djk\Hexo\source\_posts/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="H:\Blog_Djk\Hexo\source\_posts/js/jquery-3.6.4.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="H:\Blog_Djk\Hexo\source\_posts/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+<script src="H:\Blog_Djk\Hexo\source\_posts/js/script.js"></script>
 
 
 
