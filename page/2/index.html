@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Orthofinder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/07/Orthofinder/" class="article-date">
+  <time class="dt-published" datetime="2021-04-07T08:53:18.000Z" itemprop="datePublished">2021-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/07/Orthofinder/">Orthofinder</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Orthofinder的建树方法是 super tree做的, 根据 STAG算法。</p>
+<p>Otrhofinder和 OrthoMCL的异同？</p>
+<p>  OrthoMCL uses BLAST to compute sequence similarity scores between sequences in multiple species and then uses the MCL xlustering algorithm to identify highly-connected clusters (groups of highly similar sequences) within this dataset.</p>
+<ol>
+<li>在BLAST层面 Orthofinder 克服 基因长度偏差</li>
+<li>后续的鉴定仍然是延续 reciprocal nest (normalized) hit.</li>
+</ol>
+<p>如何查找一段插入序列？</p>
+<p>外源片段插入位置，可以通过 WGS 查看bam 格式利用IGV可视化。</p>
+<p>或者使用载体标记序列,进行 BLAST。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/07/Orthofinder/" data-id="cm99ed0v1000tp2t8dna59u1g" data-title="Orthofinder" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-FPKM-TPM-再探" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/07/FPKM-TPM-%E5%86%8D%E6%8E%A2/" class="article-date">
+  <time class="dt-published" datetime="2021-04-07T07:53:03.000Z" itemprop="datePublished">2021-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/07/FPKM-TPM-%E5%86%8D%E6%8E%A2/">FPKM TPM 再探</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> 今天遇到一个问题， 有人问我FPKM什么意思？我没口述出来。<br>FPKM 全称是 Fragments per kilobase per Million.<br>这里的 kilobase是指 外显子长度的单位。<br>Million是指 reads 个数的单位。<br>每1kbp的外显子长度对应多少百万reads个数。</p>
+<p>FPKM和TPM的最主要区别在于对测序深度的标准化不同。<br>他们俩对于基因长度的标准化处理是一致的，但是<br>FPKM对测序深度直接除以总reads数目,TPM除以的是基因长度归一化之后的 reads数目。<br>这两点有什么不一致吗？</p>
+<p>这里首先需要回答为什么需要FPKM和TPM的统计量？<br>因为我们想知道某一个基因的表达量在整个样本中的比例。<br>但是FPKM既然已经对基因长度归一化之后，可以理解为知道每个基因已经有多少转录本了，这时候应该除以总转录本数目了。</p>
+<p>但是N&#x2F;10^6是由测序深度决定，和总转录本数量无线性关系。所以TPM更准确。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/07/FPKM-TPM-%E5%86%8D%E6%8E%A2/" data-id="cm99ed0un0002p2t8avwe4tdf" data-title="FPKM TPM 再探" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-snakemake" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/14/snakemake/" class="article-date">
+  <time class="dt-published" datetime="2021-03-14T04:54:36.000Z" itemprop="datePublished">2021-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/14/snakemake/">snakemake</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> 全部流程：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">SAMPLES = &#123;<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line">rule bwa_map:</span><br><span class="line">	<span class="built_in">input</span>:</span><br><span class="line">		<span class="string">&quot;data/genome.fa&quot;</span>,</span><br><span class="line">		<span class="string">&quot;data/samples/A.fastq&quot;</span></span><br><span class="line">	output::</span><br><span class="line">		<span class="string">&quot;mapped_reads/A.bam&quot;</span></span><br><span class="line">	shell:</span><br><span class="line">		<span class="string">&quot;bwa mem &#123;input&#125; | samtools view -Sb - &gt; &#123;output&#125;&quot;</span></span><br><span class="line">		</span><br><span class="line">rule samtools_sort:</span><br><span class="line">	<span class="built_in">input</span>:</span><br><span class="line">		<span class="string">&quot;mapped_reads/&#123;sample&#125;.bam&quot;</span></span><br><span class="line">	output:</span><br><span class="line">		<span class="string">&quot;sorted_reads/&#123;sample&#125;.bam&quot;</span></span><br><span class="line">	shell:</span><br><span class="line">		<span class="string">&quot;samtools sort -T sorted_reads/&#123;widecards.sample&#125;&quot;</span></span><br><span class="line">		<span class="string">&quot;-O bam &#123;input&#125; &gt; &#123;output&#125;&quot;</span></span><br><span class="line">		</span><br><span class="line">rule samtools_index:</span><br><span class="line">	<span class="built_in">input</span>:</span><br><span class="line">		<span class="string">&quot;sorted_reads/&#123;sample&#125;.bam&quot;</span></span><br><span class="line">	output:</span><br><span class="line">		<span class="string">&quot;sorted_reads/&#123;sample&#125;.bam.bai&quot;</span></span><br><span class="line">	shell:</span><br><span class="line">		<span class="string">&quot;samtools index &#123;input&#125;&quot;</span></span><br><span class="line">		</span><br><span class="line">rule bcftools_call:</span><br><span class="line">	<span class="built_in">input</span>:</span><br><span class="line">		fa=<span class="string">&quot;data/genome.fa&quot;</span>,</span><br><span class="line">		bam=expand(<span class="string">&quot;sorted_reads/&#123;sample&#125;.bam&quot;</span>,sample=SAMPLES),</span><br><span class="line">		bai=expand(<span class="string">&quot;sorted_reads/&#123;sample&#125;.bam.bai&quot;</span>,sample=SAMPLES)</span><br><span class="line">	output:</span><br><span class="line">		<span class="string">&quot;calls/all.vcf&quot;</span></span><br><span class="line">	shell:</span><br><span class="line">		<span class="string">&quot;samtools mpileup -g -f &#123;input.fa&#125; &#123;input.bam&#125;|&quot;</span></span><br><span class="line">		<span class="string">&quot;bcftools call -mv - &gt; &#123;output&#125;&quot;</span></span><br><span class="line">		</span><br><span class="line">rule plot_quals:</span><br><span class="line">	<span class="built_in">input</span>:</span><br><span class="line">		<span class="string">&quot;calls/all.vcf&quot;</span></span><br><span class="line">	output:</span><br><span class="line">		<span class="string">&quot;plots/quals.svg&quot;</span></span><br><span class="line">	script:</span><br><span class="line">		<span class="string">&quot;scripts/plot-quals.py&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/14/snakemake/" data-id="cm99ed0v9001mp2t8488pfbu9" data-title="snakemake" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/snakemake/" rel="tag">snakemake</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ClusterProfiler-进行通用富集分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/11/ClusterProfiler-%E8%BF%9B%E8%A1%8C%E9%80%9A%E7%94%A8%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2021-03-11T08:09:35.000Z" itemprop="datePublished">2021-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/11/ClusterProfiler-%E8%BF%9B%E8%A1%8C%E9%80%9A%E7%94%A8%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/">ClusterProfiler 进行通用富集分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  这两天一直帮师妹做富集分析。因为茶树是非模式物种，所以没有自己orgdb包。虽然自己能够构建物种包，但是就只是做个富集分析，所以就使用ClusterProfiler的通用富集分析enricher函数，进行富集分析。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ego <span class="operator">&lt;-</span> enricher<span class="punctuation">(</span>gene_list<span class="punctuation">,</span> </span><br><span class="line">                TERM2GENE <span class="operator">=</span> go2gene<span class="punctuation">,</span> </span><br><span class="line">                TERM2NAME <span class="operator">=</span> go2name<span class="punctuation">,</span> </span><br><span class="line">                pvalueCutoff <span class="operator">=</span> <span class="number">0.05</span><span class="punctuation">,</span> </span><br><span class="line">                qvalueCutoff <span class="operator">=</span> <span class="number">0.05</span><span class="punctuation">,</span></span><br><span class="line">                pAdjustMethod <span class="operator">=</span> <span class="string">&quot;fdr&quot;</span><span class="punctuation">,</span></span><br><span class="line">                minGSSize <span class="operator">=</span> <span class="number">10</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>核心点是 自己准备TERM2GENE 和   TERM2NAME 文件</p>
+<p>TERM2GENE</p>
+<table>
+<thead>
+<tr>
+<th align="center">Term</th>
+<th align="center">Gene</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GO:000001</td>
+<td align="center">TEA000001</td>
+</tr>
+<tr>
+<td align="center">GO:000002</td>
+<td align="center">TEA000002</td>
+</tr>
+</tbody></table>
+<p>TERM2NAME</p>
+<table>
+<thead>
+<tr>
+<th align="center">Term</th>
+<th align="center">NAME</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GO:000001</td>
+<td align="center">Amine Transport</td>
+</tr>
+<tr>
+<td align="center">GO:000002</td>
+<td align="center">Amino Absorb</td>
+</tr>
+</tbody></table>
+<p>里面的意思是我随手写的，但是所有文件都可以自己从TPIA文件整理数据获得。</p>
+<p>KO富集分析同理</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/11/ClusterProfiler-%E8%BF%9B%E8%A1%8C%E9%80%9A%E7%94%A8%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" data-id="cm99ed0uu000ap2t8dxrr5s2f" data-title="ClusterProfiler 进行通用富集分析" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-硕士论文书写心得" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/07/%E7%A1%95%E5%A3%AB%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%E5%BF%83%E5%BE%97/" class="article-date">
+  <time class="dt-published" datetime="2021-03-07T13:21:14.000Z" itemprop="datePublished">2021-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/07/%E7%A1%95%E5%A3%AB%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%E5%BF%83%E5%BE%97/">硕士论文书写心得</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  最近一直在忙着写硕士论文，刚刚写的时候特别顺手，总算有了一丝丝满意的感觉了。<br>我自己是十分珍惜书写硕士机会的。因为书写大论文的机会是不多的，如果将来不出书的情况下，即使读到博士，也就三次大论文机会。本科论文、硕士论文和博士论文,总共也就三次机会。所以即使有很多写小论文的机会，但是大论文的机会确实不多。并且在书写大论文的过程，对整个研究领域是有一个比较宏观和微观的梳理，最后心里会出现一条研究领域脉络的。</p>
+<p>我在书写硕士论文背景的时候，我自己又重新梳理一遍转录组的文库制备和分析流程。对之前很多模模糊糊的概念重新有了较为清晰的认识。比如我一直只明白reads计数表面的意思，我在写的时候，就想在进行reads计数的时候，难道不是应该把reads拼接为完整的转录本，再进行计数吗？结果发现真不是，是直接统计数量的，那这样就要考虑测序深度和外显子长度了。所以归一化的时候，就要充分考虑这两方面的影响。</p>
+<p>最近需要帮老师约转录组测序，还是很期待，比如茶树的测序深度多少呢？各家说的UMI绝对定量技术，真有那么神奇吗？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/07/%E7%A1%95%E5%A3%AB%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%E5%BF%83%E5%BE%97/" data-id="cm99ed0vc0023p2t8fi9j7rm5" data-title="硕士论文书写心得" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-NNL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/31/NNL/" class="article-date">
+  <time class="dt-published" datetime="2021-01-31T11:30:08.000Z" itemprop="datePublished">2021-01-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/31/NNL/">NNL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> 最近河南大学的王学路教授团队 (<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41477-020-00832-7)%E5%9C%A8%E3%80%8ANature">https://www.nature.com/articles/s41477-020-00832-7)在《Nature</a> Plants》上报道他们新克隆一个新基因NNL1，转座子插入导致NNL1失活，失活的NNL1导致根瘤菌（rhizobia）侵染大豆根器官方式从裂缝侵染（crack infection）向根毛侵染（root hair infection）过渡。这说明NNL1是决定根瘤菌侵染方式的开关。</p>
+<p>还有2020年最新发表的文章（<a target="_blank" rel="noopener" href="http://www.plantcell.org/content/32/6/1868%EF%BC%89%E3%80%82%E4%BD%9C%E8%80%85%E9%80%9A%E8%BF%87%E7%AA%81%E5%8F%98*Medicago">http://www.plantcell.org/content/32/6/1868）。作者通过突变*Medicago</a> truncatula* NODULE ROOT1 转换 legume-type nodules 为 actinorhizal-type nodules.</p>
+<p>这不禁让我联想到《Actinorhizal root nodule symbioses: what is signalling telling on the origins of nodulation?》这篇文章。</p>
+<p>到底信号通路告诉我们些什么呢？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/31/NNL/" data-id="cm99ed0uw000fp2t83lpn4cgl" data-title="NNL" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Stardock-Fence-报错" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/22/Stardock-Fence-%E6%8A%A5%E9%94%99/" class="article-date">
+  <time class="dt-published" datetime="2021-01-22T05:48:58.000Z" itemprop="datePublished">2021-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/22/Stardock-Fence-%E6%8A%A5%E9%94%99/">Stardock Fence 报错</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="StarDock-Fence-报错"><a href="#StarDock-Fence-报错" class="headerlink" title="StarDock Fence 报错"></a>StarDock Fence 报错</h4><p>首先，因为课题和家里的一些自己的原因，我停更了好长时间，终于我终于又开始更新自己的博客了，感觉像回到家一样。</p>
+<p>今天首先是解决Fence 软件的报错，我重装之后发现报错仍旧一样，我估计之前卸载不够干净，尤其是注册表。</p>
+<p>之后使用注册表清理工具清理下无用的注册表之后，果然工作良好。</p>
+<p>我好像很享受这种猜测的感觉？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/22/Stardock-Fence-%E6%8A%A5%E9%94%99/" data-id="cm99ed0v0000sp2t8h2trclul" data-title="Stardock Fence 报错" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Kaks计算" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/11/23/Kaks%E8%AE%A1%E7%AE%97/" class="article-date">
+  <time class="dt-published" datetime="2020-11-23T06:47:46.000Z" itemprop="datePublished">2020-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/11/23/Kaks%E8%AE%A1%E7%AE%97/">Kaks计算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  对于一个没有受到自然选择压力的基因来说，Ka&#x2F;Ks 一般会小于等于1。但实际情况下，这个比值都是远小于1的，因为从蛋白质进化的角度而言，为了维持蛋白质功能的稳定性，其非同义替换的数量往往较少，因此非同义突变Ka要远远小于Ks。因此我们根据Ka&#x2F;Ks大小，将基因划分为三类：</p>
+<p>  Ka&gt;&gt;&gt;Ks -&gt; Ka&#x2F;Ks &gt;&gt; 1, 基因受正选择 （positive selection）</p>
+<p>  Ka &#x3D; Ks -&gt; Ka&#x2F;Ks &#x3D; 1, 基因中性进化 （neutural selection）</p>
+<p>  Ka&lt;&lt;&lt;Ks -&gt; Ka&#x2F;Ks &lt;&lt; 1, 基因受纯化选择 （negative selection）</p>
+<p>  对于一个基因是否受到正选择，我们不能简单的数一下两条序列之间发生（非）同义变换的SNP位点数，再除以（非）同义替换位点数，**就得到Ka&#x2F;Ks值！**因为不同碱基之间发生替换的速率不同，比如转换（transition, 嘌呤&lt;&#x3D;&gt;嘌呤,嘧啶&lt;&#x3D;&gt;嘧啶）发生的概率要高于颠换（transversion, 嘌呤&lt;&#x3D;&gt;嘧啶,嘧啶&lt;&#x3D;&gt;嘌呤）；物种在不同进化支系进化速率也存在差异；这些都决定选择压力不仅要考虑基因序列差异，同时也要考虑基因的不同位点以及改基因所属的物种在进化中的进化速率来综合决定该基因是受何种选择。</p>
+<p>Null hypothesis 零假设：所有lineage 有一个共同的w</p>
+<p>Alternative hypothesis 替代假设：一些lineage 有共同的 w </p>
+<p>不同的物种可能经历了不同的选择过程，因此 w值不同</p>
+<p>如果替代假设正确，就可以从中推断进化的情况。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/23/Kaks%E8%AE%A1%E7%AE%97/" data-id="cm99ed0uy000mp2t86hxl55j1" data-title="Kaks计算" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-关于基因水平转移的思考" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/11/21/%E5%85%B3%E4%BA%8E%E5%9F%BA%E5%9B%A0%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%80%9D%E8%80%83/" class="article-date">
+  <time class="dt-published" datetime="2020-11-21T13:15:38.000Z" itemprop="datePublished">2020-11-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/11/21/%E5%85%B3%E4%BA%8E%E5%9F%BA%E5%9B%A0%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%80%9D%E8%80%83/">关于基因水平转移的思考</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> 最近准备看水平转移的一些文献。正好最近在开一个会议，涉及到两方面的课题。</p>
+<ol>
+<li><p>茶氨酸合成酶的基因的出生</p>
+</li>
+<li><h5 id="茶氨酸合成基因的水平转移来源"><a href="#茶氨酸合成基因的水平转移来源" class="headerlink" title="茶氨酸合成基因的水平转移来源"></a>茶氨酸合成基因的水平转移来源</h5><p> 两个方法：</p>
+<ol>
+<li><p>BLAST</p>
+</li>
+<li><p>系统进化树分析</p>
+<p> 肯定最好是直系同源基因，但是</p>
+<p> <img src="C:\Users\Jinke\AppData\Roaming\Typora\typora-user-images\image-20201124103335411.png" alt="image-20201124103335411"></p>
+</li>
+</ol>
+</li>
+</ol>
+<center>Phylogenetic tree of tea TS and GS candidate genes and the available GS genes from prokaryotes, fungi, and plants. The tea TS candidate gene (CsTSI) shows high similarity to known GSI-type genes, and other GS candidate genes exhibit high homology with previously reported GSII-type genes in plants.</center>
+
+<p>从这张图看TS1基因很有可能是从细菌水平转移来的。</p>
+<p><strong>能不能用更进一步的方法来证明呢</strong>？</p>
+<p>我现在在看序列我发现我不能重现进化树。首先竟然没有一个。</p>
+<p>我要去找杨华老师和邰玉玲老师去找蛋白序列。<br>杨华老师说她下周有空。</p>
+<p><strong>时间：</strong> 2020&#x2F;12&#x2F;3</p>
+<p>杨华老师返回给我的蛋白序列和我之前找的蛋白序列是一模一样的，丝毫不差。接下来问题转移到基因水平转移的鉴定上来了。</p>
+<p><img src="C:\Users\Jinke\AppData\Roaming\Typora\typora-user-images\image-20201203092608177.png" alt="image-20201203092608177"></p>
+<hr>
+<p><strong>还有一个问题是丙氨酸脱羧酶的来源?</strong></p>
+<p><strong>因为相比较TS1来说AlaDC来说更加特殊，关于丙氨酸脱羧酶的报道更加少</strong></p>
+<p><strong>难道在其它物种就不要丙氨酸脱羧酶吗？还是说它是独立进化的？是单独起源还是多起源？</strong></p>
+<p><strong>还有蘑菇合成茶氨酸是什么酶呢？是蛋白BLAST</strong></p>
+<hr>
+<p><strong>时间：2020年11月16日</strong></p>
+<p>和夏老师谈话心得：直接寻找蛋白序列去做BLAST</p>
+<p>或者使用domain去找</p>
+<p>结果： 序列比对结果不好。</p>
+<blockquote>
+<p>还有cafe软件学习</p>
+</blockquote>
+<p>蘑菇序列比对</p>
+<p>时间： 2020&#x2F;11&#x2F;26&#x2F;16：49</p>
+<p>目前我只找到了两个菌的序列</p>
+<p>一个是 Boletus edulis<br>一个是 Xerocomus badius</p>
+<p>还有一个是假单胞杆菌Pt</p>
+<p>分别构建蛋白库；<br>之后使用TS1比对，结果不好。<br>AlaDC都没有<br>但是GGT却都含有，但是identity值非常低。这个结果就很有趣了，实际上是转移酶在起作用？</p>
+<p>GS比对相对就更可信多了</p>
+<hr>
+<h4 id="目标：对GGT进行在线全局BLAST分析"><a href="#目标：对GGT进行在线全局BLAST分析" class="headerlink" title="目标：对GGT进行在线全局BLAST分析"></a>目标：对GGT进行在线全局BLAST分析</h4><h6 id="结果：之后发现GGT并不是水平转移来的，因为跟其它物种也比较类似，所以没有水平转移"><a href="#结果：之后发现GGT并不是水平转移来的，因为跟其它物种也比较类似，所以没有水平转移" class="headerlink" title="结果：之后发现GGT并不是水平转移来的，因为跟其它物种也比较类似，所以没有水平转移"></a>结果：之后发现GGT并不是水平转移来的，因为跟其它物种也比较类似，所以没有水平转移</h6><hr>
+<p>真菌的茶氨酸底物是怎么来的？</p>
+<p>所以随之而来的问题是AlaDC到底是怎么来的？<br>在NCBI上的BLAST结果显示都是丝氨酸脱羧酶类似物，但是也都是假设蛋白。我首先做了拟南芥丝氨酸脱羧酶和茶树丙氨酸脱羧酶之间的比对</p>
+<p><img src="C:\Users\Jinke\AppData\Roaming\Typora\typora-user-images\image-20201127102728163.png" alt="image-20201127102728163"></p>
+<p>可以很明显看到几个氨基酸的的变化，导致了他们之间能力的差异。<br>因为丝氨酸是亲水的氨基酸，但是丙氨酸是疏水性氨基酸。加上我之前汇报的文献也是，变成对疏水性氨基酸的<br>亲和力变强。所以其他物种是怎么变异的呢？这个文献是需要看的？还有为什么茶树是对丙氨酸脱羧？为什么其他物种是对苯丙氨酸脱水呢？</p>
+<p>我首先进行蛋白和DNA比对，首先看看他们的motif和domain的变化情况。</p>
+<p>蛋白寻找：<br>domain 没有变化</p>
+<p><img src="C:\Users\Jinke\AppData\Roaming\Typora\typora-user-images\image-20201127111518157.png" alt="image-20201127111518157"></p>
+<p><a target="_blank" rel="noopener" href="http://pfam.xfam.org/family/PF00282.19">http://pfam.xfam.org/family/PF00282.19</a> （domain描述）</p>
+<p>我想知道丙氨酸脱羧酶是怎么来的。</p>
+<p>怎么来的？是不是受到选择压力，产生剧烈的变化？<br>目前排除是水平转移来的，只能是同源基因来的。所以可以直接使用orthofinder找到直系同源基因，计算他们的KaKs，还有想办法找到他们的出生图。</p>
+<blockquote>
+<p>我得参考最新的文章看看茶氨酸含量变化，文章作者都没有回复我</p>
+</blockquote>
+<hr>
+<p>我想找到TS1和AlaDC的出生方式（通过比较基因组分析，估计是cafe软件），但是无论是大理茶还是古茶树都有茶氨酸，这说明从一开始就已经有AlaDC了。</p>
+<blockquote>
+<p>AlaDC相比较拟南芥的AlaDC,或者其它几个基因有没有受到很大的选择压力？</p>
+</blockquote>
+<p>比较基因组分析，可以跟猕猴桃的基因组进行比较分析。</p>
+<p>这是因为猕猴桃离我们最近。</p>
+<p>计算KaKs的分析，这个网上都有很多教程。（最好可以找到有体系的教程）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/21/%E5%85%B3%E4%BA%8E%E5%9F%BA%E5%9B%A0%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%80%9D%E8%80%83/" data-id="cm99ed0va001up2t8bpoe599k" data-title="关于基因水平转移的思考" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Genome-Scope-study" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/11/06/Genome-Scope-study/" class="article-date">
+  <time class="dt-published" datetime="2020-11-06T06:50:17.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/11/06/Genome-Scope-study/">Genome Scope study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="G:\Blog_Djk\Hexo\source_posts\Genome-Scope-study\screen_shot_2017-02-16_at_7.31.20_am.png" alt="img"></p>
+<p><img src="G:\Blog_Djk\Hexo\source_posts\Genome-Scope-study\image-20201122214923389.png" alt="image-20201122214923389"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/06/Genome-Scope-study/" data-id="cm99ed0uw000gp2t802u93il0" data-title="Genome Scope study" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Platanus/" rel="tag">Platanus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5%E6%96%87%E4%BB%B6/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snakemake/" rel="tag">snakemake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E5%8F%97/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" rel="tag">植物学 分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="/tags/FPKM-TPM/" style="font-size: 10px;">FPKM TPM</a> <a href="/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">Ka Ks计算</a> <a href="/tags/Orthofinder-OrthoMCL/" style="font-size: 10px;">Orthofinder OrthoMCL</a> <a href="/tags/PPT/" style="font-size: 10px;">PPT</a> <a href="/tags/Platanus/" style="font-size: 10px;">Platanus</a> <a href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="/tags/h5%E6%96%87%E4%BB%B6/" style="font-size: 10px;">h5文件</a> <a href="/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="/tags/hyphy/" style="font-size: 10px;">hyphy</a> <a href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">matplotlib 指引</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">numpy 学习</a> <a href="/tags/orthofinder-orthomcl/" style="font-size: 10px;">orthofinder  orthomcl</a> <a href="/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="/tags/snakemake/" style="font-size: 10px;">snakemake</a> <a href="/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" style="font-size: 10px;">基因 水平转移</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 10px;">工程管理</a> <a href="/tags/%E6%84%9F%E5%8F%97/" style="font-size: 10px;">感受</a> <a href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" style="font-size: 10px;">植物学 分类</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" style="font-size: 10px;">转录组</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/28/PPT-experience/">PPT_experience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/">Orthofinder和OrthoMCL的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/05/pico-%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/">pico_配置图床</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/01/hyphy-note/">hyphy_note</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/09/zhiwuxue-fenlei/">zhiwuxue_fenlei</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
