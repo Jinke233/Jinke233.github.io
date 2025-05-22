@@ -71,6 +71,159 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-numpy-学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/10/19/numpy-%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2020-10-19T11:52:53.000Z" itemprop="datePublished">2020-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/10/19/numpy-%E5%AD%A6%E4%B9%A0/">numpy 学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">布尔类型，1 个字节，值为 True 或 False。</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">整数类型，通常为 int64 或 int32 。</td>
+</tr>
+<tr>
+<td align="center">intc</td>
+<td align="center">与 C 里的 int 相同，通常为 int32 或 int64。</td>
+</tr>
+<tr>
+<td align="center">intp</td>
+<td align="center">用于索引，通常为 int32 或 int64。</td>
+</tr>
+<tr>
+<td align="center">int8</td>
+<td align="center">字节（从 -128 到 127）</td>
+</tr>
+<tr>
+<td align="center">int16</td>
+<td align="center">整数（从 -32768 到 32767）</td>
+</tr>
+<tr>
+<td align="center">int32</td>
+<td align="center">整数（从 -2147483648 到 2147483647）</td>
+</tr>
+<tr>
+<td align="center">int64</td>
+<td align="center">整数（从 -9223372036854775808 到 9223372036854775807）</td>
+</tr>
+<tr>
+<td align="center">uint8</td>
+<td align="center">无符号整数（从 0 到 255）</td>
+</tr>
+<tr>
+<td align="center">uint16</td>
+<td align="center">无符号整数（从 0 到 65535）</td>
+</tr>
+<tr>
+<td align="center">uint32</td>
+<td align="center">无符号整数（从 0 到 4294967295）</td>
+</tr>
+<tr>
+<td align="center">uint64</td>
+<td align="center">无符号整数（从 0 到 18446744073709551615）</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">float64 的简写。</td>
+</tr>
+<tr>
+<td align="center">float16</td>
+<td align="center">半精度浮点，5 位指数，10 位尾数</td>
+</tr>
+<tr>
+<td align="center">float32</td>
+<td align="center">单精度浮点，8 位指数，23 位尾数</td>
+</tr>
+<tr>
+<td align="center">float64</td>
+<td align="center">双精度浮点，11 位指数，52 位尾数</td>
+</tr>
+<tr>
+<td align="center">complex</td>
+<td align="center">complex128 的简写。</td>
+</tr>
+<tr>
+<td align="center">complex64</td>
+<td align="center">复数，由两个 32 位浮点表示。</td>
+</tr>
+<tr>
+<td align="center">complex128</td>
+<td align="center">复数，由两个 64 位浮点表示。</td>
+</tr>
+</tbody></table>
+<p>在Numpy中， 上面提到的这些数值类型都被归于 <code>dtype (data-type)</code> 对象的实例。 我们可以用 numpy.dtype(object, align, copy) 来指定数值类型。 而在数组里面， 可以用 <code>dtype=</code> 参数</p>
+<p>NumPy 中，<code>ndarray</code> 类具有六个参数，它们分别为：</p>
+<ul>
+<li><code>shape</code>：数组的形状。</li>
+<li><code>dtype</code>：数据类型。</li>
+<li><code>buffer</code>：对象暴露缓冲区接口。</li>
+<li><code>offset</code>：数组数据的偏移量。</li>
+<li><code>strides</code>：数据步长。</li>
+<li><code>order</code>：<code>&#123;&#39;C&#39;，&#39;F&#39;&#125;</code>，以行或列为主排列顺序。</li>
+</ul>
+<p>下面，我们来了解创建 NumPy 多维数组的一些方法。在 NumPy 中，我们主要通过以下 5 种途径创建数组，它们分别是:</p>
+<ul>
+<li>从 Python 数组结构列表，元组等转换。</li>
+<li>使用 <code>np.arange</code>、<code>np.ones</code>、<code>np.zeros</code> 等 NumPy 原生方法。</li>
+<li>从存储空间读取数组。</li>
+<li>通过使用字符串或缓冲区从原始字节创建数组。</li>
+<li>使用特殊函数，如 <code>random</code>。</li>
+</ul>
+<p>除了直接使用 array 方法创建 <code>ndarray</code>，在 NumPy 中还有一些方法可以创建一些有规律性的多维数。首先，我们来看一看 <code>arange()</code>。<code>arange()</code> 的功能是在给定区间内创建一系列均匀间隔的值。方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.arange(start, stop, step, dtype=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+
+<p>你需要先设置值所在的区间 <code>[开始， 停止)</code>，这是一个半开半闭区间。然后，在设置 <code>step</code> 步长用于设置值之间的间隔。最后的可选参数 <code>dtype </code>可以设置返回<code>ndarray</code> 的值类型。</p>
+<h4 id="ndarray-数组属性"><a href="#ndarray-数组属性" class="headerlink" title="ndarray 数组属性"></a><code>ndarray</code> 数组属性</h4><img width='500px' src="https://doc.shiyanlou.com/courses/uid214893-20190528-1559029416949">
+
+<p>你可以发现规律，<code>.shape</code> 得到的形状实际上是数组在每个轴 Axis 上面的元素数量，而 <code>.shape</code> 的长度的表明了数组的维度。</p>
+<h4 id="数组展开"><a href="#数组展开" class="headerlink" title="数组展开"></a>数组展开</h4><p>数组扁平化，变为 1 维数组。<code>ravel</code> 方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.ravel(a, order=<span class="string">&#x27;C&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其中，a 表示需要处理的数组。<code>order</code> 表示变换时的读取顺序，默认是按照行依次读取，当 <code>order=&#39;F&#39;</code> 时，可以按列依次读取排序。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/19/numpy-%E5%AD%A6%E4%B9%A0/" data-id="cma9vjwfx0020e4t8g0ql6rkp" data-title="numpy 学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Jupyter-notebook-使用手册" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/10/19/Jupyter-notebook-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="article-date">
@@ -464,62 +617,6 @@
 
 
   
-    <article id="post-feeling-of-writring-article" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/09/15/feeling-of-writring-article/" class="article-date">
-  <time class="dt-published" datetime="2020-09-15T13:24:05.000Z" itemprop="datePublished">2020-09-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/09/15/feeling-of-writring-article/">feeling of writring article</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>  最近一直在改文章，也快弄了两三个月了。</p>
-<p>我的失误：</p>
-<p>1.没有提前做好图 作图花了2个半星期，</p>
-<p>2.写文章倒是挺快的。在家的时候搞好了前言和摘要。</p>
-<p>回到学校做了后续的分析。</p>
-<ol start="3">
-<li>七月份开始写，两个月完成的初稿。这里我吃了一个大亏，就是最好需要一个安静的环境，因为写文章是创造性活动，</li>
-</ol>
-<p>需要发散性思维，我没有安排好自己的写作环境。</p>
-<p>4.写初稿，第一要快，第二要</p>
-<p>逻辑好，尤其是大的架构。我后面一昧追求快了，没有关注小段落的逻辑。</p>
-<ol start="5">
-<li>还有今天的感受，就是文章写的时候，要尽量简单，尽量让别人容易看懂。</li>
-</ol>
-<p>但是要突出重点。不要写的故意让别人看不懂，用一些难的词。我自己的失误就是总想写的深奥一点，实际突出自己的文章的亮点，恨不得每一句都是亮点，</p>
-<p>实际上是自己浅薄了，重点是逻辑好，易懂，突出亮点就好了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/15/feeling-of-writring-article/" data-id="cma9vjwfm0012e4t8c3pk0xj2" data-title="feeling of writring article" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -538,7 +635,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EndnoteX9-EndnoteX21/" rel="tag">EndnoteX9 EndnoteX21</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" rel="tag">ILS evolutionary convergence 值得反复研读的段落</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Platanus/" rel="tag">Platanus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5%E6%96%87%E4%BB%B6/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E8%BF%81%E7%A7%BB/" rel="tag">hexo迁移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snakemake/" rel="tag">snakemake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" rel="tag">θ Fst 本杰明D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" rel="tag">不好的文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E5%8F%97/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" rel="tag">文献心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" rel="tag">植物学 分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" rel="tag">比较基因组 plant_body_plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%94%E5%8C%96/" rel="tag">演化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EndnoteX9-EndnoteX21/" rel="tag">EndnoteX9 EndnoteX21</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" rel="tag">ILS evolutionary convergence 值得反复研读的段落</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Platanus/" rel="tag">Platanus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5%E6%96%87%E4%BB%B6/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E8%BF%81%E7%A7%BB/" rel="tag">hexo迁移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snakemake/" rel="tag">snakemake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" rel="tag">θ Fst 本杰明D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" rel="tag">不好的文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%A3%AB%E7%AD%94%E8%BE%A9%E6%95%99%E8%AE%AD/" rel="tag">博士答辩教训</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E5%8F%97/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" rel="tag">文献心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" rel="tag">植物学 分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" rel="tag">比较基因组 plant_body_plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%94%E5%8C%96/" rel="tag">演化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
     </div>
   </div>
 
@@ -548,7 +645,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="/tags/EndnoteX9-EndnoteX21/" style="font-size: 10px;">EndnoteX9 EndnoteX21</a> <a href="/tags/FPKM-TPM/" style="font-size: 10px;">FPKM TPM</a> <a href="/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" style="font-size: 10px;">ILS evolutionary convergence 值得反复研读的段落</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">Ka Ks计算</a> <a href="/tags/Orthofinder-OrthoMCL/" style="font-size: 10px;">Orthofinder OrthoMCL</a> <a href="/tags/PPT/" style="font-size: 10px;">PPT</a> <a href="/tags/Platanus/" style="font-size: 10px;">Platanus</a> <a href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="/tags/h5%E6%96%87%E4%BB%B6/" style="font-size: 10px;">h5文件</a> <a href="/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="/tags/hexo%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">hexo迁移</a> <a href="/tags/hyphy/" style="font-size: 10px;">hyphy</a> <a href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">matplotlib 指引</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">numpy 学习</a> <a href="/tags/orthofinder-orthomcl/" style="font-size: 10px;">orthofinder  orthomcl</a> <a href="/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="/tags/snakemake/" style="font-size: 10px;">snakemake</a> <a href="/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" style="font-size: 10px;">θ Fst 本杰明D</a> <a href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" style="font-size: 10px;">不好的文章</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" style="font-size: 10px;">基因 水平转移</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 10px;">工程管理</a> <a href="/tags/%E6%84%9F%E5%8F%97/" style="font-size: 10px;">感受</a> <a href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" style="font-size: 10px;">文献心得</a> <a href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" style="font-size: 10px;">植物学 分类</a> <a href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" style="font-size: 10px;">比较基因组 plant_body_plan</a> <a href="/tags/%E6%BC%94%E5%8C%96/" style="font-size: 10px;">演化</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" style="font-size: 10px;">转录组</a>
+      <a href="/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="/tags/EndnoteX9-EndnoteX21/" style="font-size: 10px;">EndnoteX9 EndnoteX21</a> <a href="/tags/FPKM-TPM/" style="font-size: 10px;">FPKM TPM</a> <a href="/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" style="font-size: 10px;">ILS evolutionary convergence 值得反复研读的段落</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">Ka Ks计算</a> <a href="/tags/Orthofinder-OrthoMCL/" style="font-size: 10px;">Orthofinder OrthoMCL</a> <a href="/tags/PPT/" style="font-size: 10px;">PPT</a> <a href="/tags/Platanus/" style="font-size: 10px;">Platanus</a> <a href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="/tags/h5%E6%96%87%E4%BB%B6/" style="font-size: 10px;">h5文件</a> <a href="/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="/tags/hexo%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">hexo迁移</a> <a href="/tags/hyphy/" style="font-size: 10px;">hyphy</a> <a href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">matplotlib 指引</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">numpy 学习</a> <a href="/tags/orthofinder-orthomcl/" style="font-size: 10px;">orthofinder  orthomcl</a> <a href="/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="/tags/snakemake/" style="font-size: 10px;">snakemake</a> <a href="/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" style="font-size: 10px;">θ Fst 本杰明D</a> <a href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" style="font-size: 10px;">不好的文章</a> <a href="/tags/%E5%8D%9A%E5%A3%AB%E7%AD%94%E8%BE%A9%E6%95%99%E8%AE%AD/" style="font-size: 10px;">博士答辩教训</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" style="font-size: 10px;">基因 水平转移</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 10px;">工程管理</a> <a href="/tags/%E6%84%9F%E5%8F%97/" style="font-size: 10px;">感受</a> <a href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" style="font-size: 10px;">文献心得</a> <a href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" style="font-size: 10px;">植物学 分类</a> <a href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" style="font-size: 10px;">比较基因组 plant_body_plan</a> <a href="/tags/%E6%BC%94%E5%8C%96/" style="font-size: 10px;">演化</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" style="font-size: 10px;">转录组</a>
     </div>
   </div>
 
@@ -570,6 +667,10 @@
       <ul>
         
           <li>
+            <a href="/2025/05/22/observe-phd-defense/">旁听博士答辩</a>
+          </li>
+        
+          <li>
             <a href="/2025/05/12/%E9%9C%87%E6%92%BC%E6%88%91%E5%B0%8F%E8%84%91%E7%9A%84%E4%B8%A4%E7%AF%87%E6%96%87%E7%8C%AE/">震撼我小脑的两篇文献</a>
           </li>
         
@@ -583,10 +684,6 @@
         
           <li>
             <a href="/2025/04/27/%E4%B8%80%E7%AF%87%E6%88%91%E8%A7%89%E5%BE%97%E5%86%99%E7%9A%84%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/">一篇我觉得写的不好的文章</a>
-          </li>
-        
-          <li>
-            <a href="/2025/04/23/EndnoteX9-to-X21/">EndnoteX9 to X21</a>
           </li>
         
       </ul>
