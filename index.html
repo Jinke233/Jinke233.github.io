@@ -71,6 +71,108 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-consensus-tree和original-tree的区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/09/19/consensus-tree%E5%92%8Coriginal-tree%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time class="dt-published" datetime="2025-09-19T06:59:53.000Z" itemprop="datePublished">2025-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/09/19/consensus-tree%E5%92%8Coriginal-tree%E7%9A%84%E5%8C%BA%E5%88%AB/">consensus_tree和original tree的区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>一句话实用总结：</p>
+<p>几乎都使用original tree，其上的bootstrap是从consensus tree上映射来的。</p>
+<p>在系统发育分析中，<strong>Consensus Tree（共识树）</strong> 和 <strong>Original Tree（原始树）</strong> 是两种呈现结果的方式，它们各有侧重，相互补充。下面这个表格汇总了它们的核心区别，帮你快速建立整体认识：</p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>Original Tree (原始树)</th>
+<th>Consensus Tree (共识树)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>定义</strong></td>
+<td>基于<strong>原始序列数据</strong>，通过特定算法（如NJ、ML）直接推导出的<strong>最优系统发育树</strong>。</td>
+<td>通过<strong>Bootstrap重抽样</strong>产生大量重复数据并建树，汇总这些树的结果得到<strong>一致拓扑结构</strong>。</td>
+</tr>
+<tr>
+<td><strong>核心信息</strong></td>
+<td>包含<strong>分支长度</strong>（直观反映遗传距离）和<strong>拓扑结构</strong>。</td>
+<td>主要反映<strong>拓扑结构的稳定性</strong>，<strong>不包含</strong>可靠的分支长度信息。</td>
+</tr>
+<tr>
+<td><strong>关键数值</strong></td>
+<td>可能展示从Bootstrap Consensus树映射过来的<strong>支持率</strong>。</td>
+<td>在分支节点处标注<strong>Bootstrap支持率</strong>（或类似置信值）。</td>
+</tr>
+<tr>
+<td><strong>主要目的</strong></td>
+<td>展示基于原始数据推断出的<strong>最佳进化关系</strong>和<strong>遗传距离</strong>。</td>
+<td>评估系统发育树中<strong>各分支节点的可信度&#x2F;稳定性</strong>。</td>
+</tr>
+<tr>
+<td><strong>关系</strong></td>
+<td>是Bootstrap分析中<strong>众多可能树中的一棵</strong>。</td>
+<td>是<strong>综合了许多Bootstrap重复树</strong>（通常包括Original Tree）信息后得出的<strong>一致意见</strong>。</td>
+</tr>
+</tbody></table>
+<p>🧬 <strong>1. Original Tree（原始树）：最佳估计</strong></p>
+<p>Original Tree 是使用完整的原始数据集，通过选定的系统发育推断方法（如邻接法 Neighbor-Joining, NJ；最大似然法 Maximum Likelihood, ML；最大简约法 Maximum Parsimony, MP 等）构建出的<strong>一棵最优树</strong>。它提供了：</p>
+<ul>
+<li><strong>分支长度（Branch Length）</strong>：直观表示遗传距离的差异，例如序列替换率。</li>
+<li><strong>拓扑结构（Topology）</strong>：展示了物种或基因之间的分组关系。 在MEGA等软件中，<strong>Original Tree 有时也会在分支上显示支持率，但这个支持率通常是从Bootstrap分析中映射过来的，并非其自身计算产生。</strong></li>
+</ul>
+<p>🔄 <strong>2. Consensus Tree（共识树）：稳定性的度量</strong></p>
+<p>Consensus Tree 并不是直接从原始数据计算出来的，而是<strong>通过统计重抽样方法（最常用的是Bootstrap法）来评估系统发育树中各个分支的置信度</strong>。</p>
+<ul>
+<li><strong>Bootstrap过程</strong>：从原始数据中<strong>有放回地</strong>随机抽取与原始数据量相同的位点，生成一个新的重抽样数据集。用同样的方法构建一棵系统发育树。将此过程重复成百上千次（如1000次），得到许多Bootstrap树。</li>
+<li><strong>构建共识树</strong>：分析所有这些Bootstrap树，统计<strong>所有或多数树</strong>中都出现的分支拓扑结构。在这些共同出现的分支节点上，会标注一个<strong>Bootstrap支持率（Bootstrap support value）</strong>，表示该分支在重抽样数据集中出现的频率（例如，1000次中有950次都出现了这个分支，支持率就是95%）。 因此，Consensus Tree <strong>核心作用是评估Original Tree（或其他方法得出的树）中各个分支的可靠性和稳定性</strong>。一个高的Bootstrap值（通常认为≥70%或95%）意味着该分支在多次重抽样中都很稳定，结果更可靠。它通常<strong>不包含有实际生物学意义的分支长度信息</strong>。</li>
+</ul>
+<p>💡 <strong>3. 如何结合理解与使用？</strong></p>
+<p>在实际研究和解读系统发育树时，<strong>需要将Original Tree和Consensus Tree的信息结合起来</strong>：</p>
+<ol>
+<li><strong>关注高支持率的分支</strong>：在Consensus Tree上，<strong>Bootstrap支持率高的分支</strong>（如≥70%或95%），我们认为其在Original Tree中的对应分支<strong>具有较高的置信度</strong>，进化关系更可靠。</li>
+<li><strong>谨慎解读低支持率分支</strong>：对于<strong>支持率较低的分支</strong>（如&lt;50%），即使它在Original Tree中存在，也应持<strong>谨慎态度</strong>。这表明数据可能不足以强有力地支持该分组关系，其拓扑结构不确定性较大。</li>
+<li><strong>综合解读</strong>：一篇严谨的研究论文在展示系统发育树时，通常会在一棵树上<strong>同时显示分支长度（来自Original Tree）和Bootstrap支持率（来自Consensus Tree）</strong>。这样既能展示进化距离的估计，也能表明各个关系的置信度。</li>
+</ol>
+<p><strong>核心要点总结</strong>：</p>
+<ul>
+<li><strong>Original Tree告诉你“最佳进化路径是什么”</strong>，它提供了包括分支长度在内的具体进化关系假设。</li>
+<li><strong>Consensus Tree告诉你“这个进化路径的哪些部分比较可靠”</strong>，它通过Bootstrap支持率量化了拓扑结构的稳定性。</li>
+<li>二者相辅相成，<strong>缺一不可</strong>。没有支持率的Original Tree结论是脆弱的，而没有Original Tree具体拓扑和分支长度的Consensus树则无法完整描述进化关系。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/09/19/consensus-tree%E5%92%8Coriginal-tree%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cmfqhuwd10000kpt801by1uk1" data-title="consensus_tree和original tree的区别" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/consensus-tree-%E5%92%8C-original-tree/" rel="tag">consensus tree 和 original tree</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-observe-phd-defense" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/05/22/observe-phd-defense/" class="article-date">
@@ -501,51 +603,6 @@
 
 
   
-    <article id="post-Orthofinder和OrthoMCL的区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
-  <time class="dt-published" datetime="2023-06-25T08:35:30.000Z" itemprop="datePublished">2023-06-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/">Orthofinder和OrthoMCL的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>我自己不知道写的对不对，但是之前已经有两个老师问过我这个问题，但是他们也没有给我明确的答复。</p>
-<p>粗略的答案就是orthofinder 一键输入自动输出orthologs,orthogroups，gene tree,species tree等文件。</p>
-<p>但是我觉得精细的答案是orthofinder之所以推断的orthologroups更准确，是因为在第一个版本的orthofinder（OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy）</p>
-<p>就详细阐述了基于基因长度和系统发育距离对BLAST hits得分进行标准化，再用这些标准化的bit score得到RBNH(Reciporal best length normalized hit),再基于RNBH得到一个初步的同源组基因序列的阈值，最后MCL算法聚类得到直系同源组。</p>
-<p>orthofinder之所以后续结果准确率高都是因为前期充分考虑了基因长度对鉴定相似基因造成的误差，不知道我说的对不对。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/06/25/Orthofinder%E5%92%8COrthoMCL%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cma9vjwfj000te4t80d3b3nlc" data-title="Orthofinder和OrthoMCL的区别" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -564,7 +621,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EndnoteX9-EndnoteX21/" rel="tag">EndnoteX9 EndnoteX21</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" rel="tag">ILS evolutionary convergence 值得反复研读的段落</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Platanus/" rel="tag">Platanus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5%E6%96%87%E4%BB%B6/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E8%BF%81%E7%A7%BB/" rel="tag">hexo迁移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snakemake/" rel="tag">snakemake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" rel="tag">θ Fst 本杰明D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" rel="tag">不好的文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%A3%AB%E7%AD%94%E8%BE%A9%E6%95%99%E8%AE%AD/" rel="tag">博士答辩教训</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E5%8F%97/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" rel="tag">文献心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" rel="tag">植物学 分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" rel="tag">比较基因组 plant_body_plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%94%E5%8C%96/" rel="tag">演化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Article-feeling/" rel="tag">Article feeling</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EndnoteX9-EndnoteX21/" rel="tag">EndnoteX9 EndnoteX21</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPKM-TPM/" rel="tag">FPKM TPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fence/" rel="tag">Fence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" rel="tag">ILS evolutionary convergence 值得反复研读的段落</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" rel="tag">Jupyter notebook 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" rel="tag">Ka Ks计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orthofinder-OrthoMCL/" rel="tag">Orthofinder OrthoMCL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Platanus/" rel="tag">Platanus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" rel="tag">Rosalind 点突变 转换和颠换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TFs-domain/" rel="tag">TFs  domain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Universal-Enrichment-Analysis/" rel="tag">Universal Enrichment Analysis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bzip-identification/" rel="tag">bzip identification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/consensus-tree-%E5%92%8C-original-tree/" rel="tag">consensus tree 和 original tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggtree-ggplot2/" rel="tag">ggtree ggplot2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5%E6%96%87%E4%BB%B6/" rel="tag">h5文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-node-js-git/" rel="tag">hexo node.js git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E8%BF%81%E7%A7%BB/" rel="tag">hexo迁移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hyphy/" rel="tag">hyphy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" rel="tag">matplotlib 指引</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" rel="tag">numpy 学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orthofinder-orthomcl/" rel="tag">orthofinder  orthomcl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pdb/" rel="tag">python pdb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snakemake/" rel="tag">snakemake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-Camellia-sinensis/" rel="tag">tea Camellia sinensis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea-theanine-pathway-evolution/" rel="tag">tea theanine pathway evolution</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10-tools/" rel="tag">win10 tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" rel="tag">θ Fst 本杰明D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" rel="tag">不好的文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%A3%AB%E7%AD%94%E8%BE%A9%E6%95%99%E8%AE%AD/" rel="tag">博士答辩教训</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" rel="tag">基因 水平转移</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" rel="tag">工程管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E5%8F%97/" rel="tag">感受</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" rel="tag">文献心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" rel="tag">根瘤进化 NNL 评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" rel="tag">植物学 分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" rel="tag">比较基因组 plant_body_plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%94%E5%8C%96/" rel="tag">演化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" rel="tag">虚拟环境 python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" rel="tag">转录组</a></li></ul>
     </div>
   </div>
 
@@ -574,7 +631,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="/tags/EndnoteX9-EndnoteX21/" style="font-size: 10px;">EndnoteX9 EndnoteX21</a> <a href="/tags/FPKM-TPM/" style="font-size: 10px;">FPKM TPM</a> <a href="/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" style="font-size: 10px;">ILS evolutionary convergence 值得反复研读的段落</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">Ka Ks计算</a> <a href="/tags/Orthofinder-OrthoMCL/" style="font-size: 10px;">Orthofinder OrthoMCL</a> <a href="/tags/PPT/" style="font-size: 10px;">PPT</a> <a href="/tags/Platanus/" style="font-size: 10px;">Platanus</a> <a href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="/tags/h5%E6%96%87%E4%BB%B6/" style="font-size: 10px;">h5文件</a> <a href="/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="/tags/hexo%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">hexo迁移</a> <a href="/tags/hyphy/" style="font-size: 10px;">hyphy</a> <a href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">matplotlib 指引</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">numpy 学习</a> <a href="/tags/orthofinder-orthomcl/" style="font-size: 10px;">orthofinder  orthomcl</a> <a href="/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="/tags/snakemake/" style="font-size: 10px;">snakemake</a> <a href="/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" style="font-size: 10px;">θ Fst 本杰明D</a> <a href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" style="font-size: 10px;">不好的文章</a> <a href="/tags/%E5%8D%9A%E5%A3%AB%E7%AD%94%E8%BE%A9%E6%95%99%E8%AE%AD/" style="font-size: 10px;">博士答辩教训</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" style="font-size: 10px;">基因 水平转移</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 10px;">工程管理</a> <a href="/tags/%E6%84%9F%E5%8F%97/" style="font-size: 10px;">感受</a> <a href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" style="font-size: 10px;">文献心得</a> <a href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" style="font-size: 10px;">植物学 分类</a> <a href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" style="font-size: 10px;">比较基因组 plant_body_plan</a> <a href="/tags/%E6%BC%94%E5%8C%96/" style="font-size: 10px;">演化</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" style="font-size: 10px;">转录组</a>
+      <a href="/tags/Article-feeling/" style="font-size: 10px;">Article feeling</a> <a href="/tags/EndnoteX9-EndnoteX21/" style="font-size: 10px;">EndnoteX9 EndnoteX21</a> <a href="/tags/FPKM-TPM/" style="font-size: 10px;">FPKM TPM</a> <a href="/tags/Fence/" style="font-size: 10px;">Fence</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/ILS-evolutionary-convergence-%E5%80%BC%E5%BE%97%E5%8F%8D%E5%A4%8D%E7%A0%94%E8%AF%BB%E7%9A%84%E6%AE%B5%E8%90%BD/" style="font-size: 10px;">ILS evolutionary convergence 值得反复研读的段落</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jupyter-notebook-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">Jupyter notebook 指引</a> <a href="/tags/Ka-Ks%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">Ka Ks计算</a> <a href="/tags/Orthofinder-OrthoMCL/" style="font-size: 10px;">Orthofinder OrthoMCL</a> <a href="/tags/PPT/" style="font-size: 10px;">PPT</a> <a href="/tags/Platanus/" style="font-size: 10px;">Platanus</a> <a href="/tags/Rosalind-%E7%82%B9%E7%AA%81%E5%8F%98-%E8%BD%AC%E6%8D%A2%E5%92%8C%E9%A2%A0%E6%8D%A2/" style="font-size: 10px;">Rosalind 点突变 转换和颠换</a> <a href="/tags/TFs-domain/" style="font-size: 10px;">TFs  domain</a> <a href="/tags/Universal-Enrichment-Analysis/" style="font-size: 10px;">Universal Enrichment Analysis</a> <a href="/tags/bzip-identification/" style="font-size: 10px;">bzip identification</a> <a href="/tags/consensus-tree-%E5%92%8C-original-tree/" style="font-size: 10px;">consensus tree 和 original tree</a> <a href="/tags/ggtree-ggplot2/" style="font-size: 10px;">ggtree ggplot2</a> <a href="/tags/h5%E6%96%87%E4%BB%B6/" style="font-size: 10px;">h5文件</a> <a href="/tags/hexo-node-js-git/" style="font-size: 10px;">hexo node.js git</a> <a href="/tags/hexo%E8%BF%81%E7%A7%BB/" style="font-size: 10px;">hexo迁移</a> <a href="/tags/hyphy/" style="font-size: 10px;">hyphy</a> <a href="/tags/matplotlib-%E6%8C%87%E5%BC%95/" style="font-size: 10px;">matplotlib 指引</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/numpy-%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">numpy 学习</a> <a href="/tags/orthofinder-orthomcl/" style="font-size: 10px;">orthofinder  orthomcl</a> <a href="/tags/python-pdb/" style="font-size: 10px;">python pdb</a> <a href="/tags/snakemake/" style="font-size: 10px;">snakemake</a> <a href="/tags/tea-Camellia-sinensis/" style="font-size: 10px;">tea Camellia sinensis</a> <a href="/tags/tea-theanine-pathway-evolution/" style="font-size: 10px;">tea theanine pathway evolution</a> <a href="/tags/win10-tools/" style="font-size: 10px;">win10 tools</a> <a href="/tags/%CE%B8-Fst-%E6%9C%AC%E6%9D%B0%E6%98%8ED/" style="font-size: 10px;">θ Fst 本杰明D</a> <a href="/tags/%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/" style="font-size: 10px;">不好的文章</a> <a href="/tags/%E5%8D%9A%E5%A3%AB%E7%AD%94%E8%BE%A9%E6%95%99%E8%AE%AD/" style="font-size: 10px;">博士答辩教训</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E5%9F%BA%E5%9B%A0-%E6%B0%B4%E5%B9%B3%E8%BD%AC%E7%A7%BB/" style="font-size: 10px;">基因 水平转移</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 10px;">工程管理</a> <a href="/tags/%E6%84%9F%E5%8F%97/" style="font-size: 10px;">感受</a> <a href="/tags/%E6%96%87%E7%8C%AE%E5%BF%83%E5%BE%97/" style="font-size: 10px;">文献心得</a> <a href="/tags/%E6%A0%B9%E7%98%A4%E8%BF%9B%E5%8C%96-NNL-%E8%AF%84%E8%AE%BA/" style="font-size: 10px;">根瘤进化 NNL 评论</a> <a href="/tags/%E6%A4%8D%E7%89%A9%E5%AD%A6-%E5%88%86%E7%B1%BB/" style="font-size: 10px;">植物学 分类</a> <a href="/tags/%E6%AF%94%E8%BE%83%E5%9F%BA%E5%9B%A0%E7%BB%84-plant-body-plan/" style="font-size: 10px;">比较基因组 plant_body_plan</a> <a href="/tags/%E6%BC%94%E5%8C%96/" style="font-size: 10px;">演化</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-python/" style="font-size: 10px;">虚拟环境 python</a> <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84/" style="font-size: 10px;">转录组</a>
     </div>
   </div>
 
@@ -583,7 +640,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
     </div>
   </div>
 
@@ -594,6 +651,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/09/19/consensus-tree%E5%92%8Coriginal-tree%E7%9A%84%E5%8C%BA%E5%88%AB/">consensus_tree和original tree的区别</a>
+          </li>
         
           <li>
             <a href="/2025/05/22/observe-phd-defense/">旁听博士答辩</a>
@@ -609,10 +670,6 @@
         
           <li>
             <a href="/2025/04/29/%E9%81%87%E5%88%B0%E4%B8%80%E7%AF%87%E5%A5%BD%E6%96%87%E7%AB%A0/">遇到一篇好文章</a>
-          </li>
-        
-          <li>
-            <a href="/2025/04/27/%E4%B8%80%E7%AF%87%E6%88%91%E8%A7%89%E5%BE%97%E5%86%99%E7%9A%84%E4%B8%8D%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0/">一篇我觉得写的不好的文章</a>
           </li>
         
       </ul>
